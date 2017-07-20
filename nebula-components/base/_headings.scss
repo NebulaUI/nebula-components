@@ -1,21 +1,26 @@
 h1 {
   @include nb-font-size('xxl');
+  color: $nb-color-alpha;
 }
 
 h2 {
   @include nb-font-size('xl');
+  color: $nb-color-beta;
 }
 
 h3 {
   @include nb-font-size('lg');
+  color: $nb-color-gamma;
 }
 
 h4 {
   @include nb-font-size('md');
+  color: $nb-color-delta;
 }
 
 h5 {
   @include nb-font-size('sm');
+  color: $nb-color-epsilon;
 }
 
 h6 {
