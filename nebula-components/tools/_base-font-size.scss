@@ -2,6 +2,7 @@
   @each $key, $value in map-get($nb-font-sizes, $nb-font-size-base) {
     @if $key == 'default' {
       font-size: $value;
+      line-height: map-get($nb-line-heights, $nb-font-size-base);
     }
 
     @else {

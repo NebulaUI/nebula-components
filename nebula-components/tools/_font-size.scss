@@ -4,9 +4,11 @@
       @if nth($nb-breakpoints, 1) == 'default' {
         @if $important {
           font-size: nth($nb-breakpoints, 2) !important;
+          line-height: map-get($nb-line-heights, $nb-font-size);
         }
         @else {
           font-size: nth($nb-breakpoints, 2);
+          line-height: map-get($nb-line-heights, $nb-font-size);
         }
       }
 

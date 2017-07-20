@@ -1,27 +1,3 @@
-
-@function nb-map-set($map, $key, $value) {
-  $new: ($key: $value);
-  @return map-merge($map, $new);
-}
-
-@function nb-px-to-rem-font-size($desired, $breakpoint) {
-  $nb-browser-default-font-size: 16px;
-  $v: $desired / ((map-get($nb-root-sizing, $breakpoint) / 100%) * $nb-browser-default-font-size);
-  @return #{$v}rem;
-}
-
-@function nb-px-to-rem-font-sizes($desired) {
-  $v: ();
-  @each $key, $value in $desired {
-    $temp: ();
-    @each $innerKey, $innerValue in $value {
-      $temp: nb-map-set($temp, $innerKey, nb-px-to-rem-font-size($innerValue, $innerKey));
-    }
-    $v: nb-map-set($v, $key, $temp);
-  }
-  @return $v;
-}
-
 $nb-font-keys: (xxl, xl, lg, md, sm, xs, xxs) !default;
 
 $nb-font-sizes-pixels: (
@@ -68,6 +44,16 @@ $nb-font-sizes-pixels: (
     lg: 16px
   )
 ) !default;
+
+$nb-line-heights: (
+  xxl: 1.2,
+  xl: 1.25,
+  lg: 1.3,
+  md: 1.35,
+  sm: 1.45,
+  xs: 1.5,
+  xxs: 1.5
+);
 
 $nb-font-sizes: nb-px-to-rem-font-sizes($nb-font-sizes-pixels) !default;
 

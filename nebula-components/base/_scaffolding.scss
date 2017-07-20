@@ -1,5 +1,6 @@
 body {
   @include nb-base-font-size;
+
   color: $nb-color-base-text;
   background-color: $nb-color-site-background;
 }
