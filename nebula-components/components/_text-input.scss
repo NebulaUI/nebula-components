@@ -1,0 +1,11 @@
+.#{$nb-namespace}c-text-input {
+  width: 100%;
+  padding: $nb-spacing-unit $nb-spacing-unit-double;
+  border-width: 0;
+  border-radius: $nb-border-radius;
+  box-shadow: inset 0 0 0 1px $nb-color-base-border;
+}
+
+.#{$nb-namespace}c-text-input[disabled] {
+  background: $nb-color-grey-light;
+}
