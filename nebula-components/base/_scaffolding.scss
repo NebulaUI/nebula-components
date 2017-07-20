@@ -1,0 +1,13 @@
+body {
+  @each $key, $value in map-get($nb-font-sizes, $nb-font-size-base) {
+    @if $key == 'default' {
+      font-size: $value;
+    }
+
+    @else {
+      @include nb-respond-to($key) {
+        font-size: $value;
+      }
+    }
+  }
+}

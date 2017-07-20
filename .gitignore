@@ -1,0 +1,5 @@
+node_modules
+npm-debug.log*
+demo/main.css
+*/.DS_Store
+.idea/

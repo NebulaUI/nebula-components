@@ -1,0 +1,23 @@
+h1 {
+  @include nb-font-size('xxl');
+}
+
+h2 {
+  @include nb-font-size('xl');
+}
+
+h3 {
+  @include nb-font-size('lg');
+}
+
+h4 {
+  @include nb-font-size('md');
+}
+
+h5 {
+  @include nb-font-size('sm');
+}
+
+h6 {
+  @include nb-font-size('sm');
+}

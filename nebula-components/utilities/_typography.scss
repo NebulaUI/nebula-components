@@ -1,0 +1,5 @@
+@each $key in $nb-font-keys {
+  .#{$nb-namespace}u-font-size-#{$key} {
+    @include nb-font-size($key, true);
+  }
+}

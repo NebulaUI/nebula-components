@@ -1,0 +1,30 @@
+@mixin nb-font-size($nb-font-size, $important: false) {
+  @if map-has-key($nb-font-sizes, $nb-font-size) {
+    @each $nb-breakpoints in map-get($nb-font-sizes, $nb-font-size) {
+      @if nth($nb-breakpoints, 1) == 'default' {
+        @if $important {
+          font-size: nth($nb-breakpoints, 2) !important;
+        }
+        @else {
+          font-size: nth($nb-breakpoints, 2);
+        }
+      }
+
+      @else {
+        @include nb-respond-to(nth($nb-breakpoints, 1)) {
+          @if $important {
+            font-size: nth($nb-breakpoints, 2) !important;
+          }
+          @else {
+            font-size: nth($nb-breakpoints, 2);
+          }
+        }
+      }
+    }
+  }
+
+  @else {
+    @warn 'Unfortunately, no value could be retrieved for `#{$nb-font-size}`. '
+      + 'Please make sure it is defined in `$ln-font-sizes` map.';
+  }
+}
