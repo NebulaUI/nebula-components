@@ -4,19 +4,19 @@
 }
 
 @function nb-px-to-rem-font-size($desired, $breakpoint) {
-  $nb-browser-default-font-size: 16px;
-  $v: $desired / ((map-get($nb-root-sizing, $breakpoint) / 100%) * $nb-browser-default-font-size);
-  @return #{$v}rem;
+  $browser-default-font-size: 16px;
+  $res: $desired / ((map-get($nb-root-sizing, $breakpoint) / 100%) * $browser-default-font-size);
+  @return #{$res}rem;
 }
 
 @function nb-px-to-rem-font-sizes($desired) {
-  $v: ();
+  $res: ();
   @each $key, $value in $desired {
     $temp: ();
     @each $innerKey, $innerValue in $value {
       $temp: nb-map-set($temp, $innerKey, nb-px-to-rem-font-size($innerValue, $innerKey));
     }
-    $v: nb-map-set($v, $key, $temp);
+    $res: nb-map-set($res, $key, $temp);
   }
-  @return $v;
+  @return $res;
 }

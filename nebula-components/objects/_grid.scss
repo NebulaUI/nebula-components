@@ -1,0 +1,5 @@
+@if $nb-use-grid-zero-font-size {
+  .#{$nb-namespace}o-grid__item {
+    @include nb-base-font-size;
+  }
+}

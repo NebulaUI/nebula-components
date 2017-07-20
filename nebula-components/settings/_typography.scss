@@ -45,6 +45,9 @@ $nb-font-sizes-pixels: (
   )
 ) !default;
 
+$nb-font-sizes: nb-px-to-rem-font-sizes($nb-font-sizes-pixels) !default;
+$nb-font-size-base: 'xs' !default;
+
 $nb-line-heights: (
   xxl: 1.2,
   xl: 1.25,
@@ -55,6 +58,10 @@ $nb-line-heights: (
   xxs: 1.5
 );
 
-$nb-font-sizes: nb-px-to-rem-font-sizes($nb-font-sizes-pixels) !default;
 
-$nb-font-size-base: 'xs' !default;
+
+.c-demo-card {
+  background: black;
+  color: white;
+  padding: 1rem;
+}
