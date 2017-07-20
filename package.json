@@ -37,6 +37,6 @@
     "stylelint-selector-bem-pattern": "^1.1.0"
   },
   "dependencies": {
-    "nebula-css": "^2.4.2"
+    "nebula-css": "^2.5.0"
   }
 }

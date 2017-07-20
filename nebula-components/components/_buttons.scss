@@ -1,0 +1,40 @@
+.#{$nb-namespace}c-btn {
+  display: inline-block;
+  color: $nb-color-white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: $nb-base-border-radius;
+  text-decoration: none;
+}
+
+.c-btn--sm {
+  padding: $nb-spacing-unit-half $nb-spacing-unit;
+}
+
+.c-btn--md {
+  padding: $nb-spacing-unit $nb-spacing-unit-double;
+}
+
+.c-btn--lg {
+  padding: ($nb-spacing-unit * 1.5) ($nb-spacing-unit-double * 1.5);
+}
+
+.#{$nb-namespace}c-btn--alpha {
+  background-color: $nb-color-alpha;
+  transition: background-color $nb-transition-duration;
+
+  &:hover,
+  &:focus {
+    background-color: darken($nb-color-alpha, 10%);
+  }
+}
+
+.#{$nb-namespace}c-btn--beta {
+  background-color: $nb-color-beta;
+  transition: background-color $nb-transition-duration;
+
+  &:hover,
+  &:focus {
+    background-color: darken($nb-color-beta, 10%);
+  }
+}
