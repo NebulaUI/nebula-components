@@ -1,7 +1,8 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "ignoreFiles": [
-    "demo/dist/main.css"
+    "demo/dist/main.css",
+    "nebula-components/tools/**/*.scss"
   ],
   "plugins": [
     "stylelint-scss",
