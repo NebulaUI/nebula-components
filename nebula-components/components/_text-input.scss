@@ -9,3 +9,7 @@
 .#{$nb-namespace}c-text-input[disabled] {
   background: $nb-color-grey-light;
 }
+
+.#{$nb-namespace}c-text-input--textarea {
+  min-height: 10rem;
+}
