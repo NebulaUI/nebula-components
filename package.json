@@ -10,7 +10,7 @@
     "build": "cd demo && npm run build",
     "start": "cd demo && npm run start",
     "test": "cd demo && npm install && npm run lint",
-    "deploy": "npm run lint && npm run build && gh-pages -d demo"
+    "deploy": "npm run lint && npm run build && gh-pages -d demo/dist"
   },
   "keywords": [
     "itcss",
