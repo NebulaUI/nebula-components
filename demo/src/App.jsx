@@ -8,7 +8,7 @@ const App = ({ title }) => (
         grid item 1
       </div>
       <div className="o-grid__item u-1/2@sm">
-        <button className="c-btn c-btn--alpha c-btn--md">Place bet</button>
+        <button className="c-btn c-btn--alpha c-btn--md">Place test</button>
       </div>
     </div>
   </div>

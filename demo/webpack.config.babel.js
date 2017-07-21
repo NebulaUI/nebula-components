@@ -8,7 +8,7 @@ const common = {
   entry: path.resolve(__dirname, './src'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -16,42 +16,42 @@ const common = {
       {
         test: /\.s?css$/,
         use: [{
-          loader: 'style-loader'
+          loader: 'style-loader',
         }, {
-          loader: 'css-loader'
+          loader: 'css-loader',
         }, {
           loader: 'postcss-loader',
           options: {
             plugins: () => [
-              autoprefixer({ browsers: ['last 2 versions', 'ie 9-11'] })
-            ]
-          }
+              autoprefixer({ browsers: ['last 2 versions', 'ie 9-11'] }),
+            ],
+          },
         }, {
           loader: 'sass-loader',
           options: {
             includePaths: [
               path.resolve(__dirname, '../node_modules/nebula-css'),
-              path.resolve(__dirname, '../')
-            ]
-          }
-        }]
-      }
+              path.resolve(__dirname, '../'),
+            ],
+          },
+        }],
+      },
     ]
   },
   plugins: [new HtmlWebpackPlugin({
     filename: '../index.html',
-    template: 'src/index.html'
+    template: 'src/index.html',
   })],
   resolve: {
-    extensions: ['.js', '.jsx', '.scss', '.css']
-  }
+    extensions: ['.js', '.jsx'],
+  },
 }
 
 const dev = {
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
 }
 
 const prod = {
@@ -63,9 +63,9 @@ const prod = {
       compress: {
         warnings: false,
       },
-      sourceMap: false
-    })
-  ]
+      sourceMap: false,
+    }),
+  ],
 }
 
 const config = (env) => {
