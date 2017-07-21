@@ -1,5 +1,12 @@
 @import 'nebula-css/settings';
 @import './settings/helpers';
-@import './settings/typography';
+
 @import './settings/colors';
+@import './settings/feature-toggles';
 @import './settings/globals';
+@import './settings/typography';
+
+@import 'settings/components/form-input';
+@import 'settings/components/btn';
+@import 'settings/components/label';
+@import 'settings/components/text-input';
