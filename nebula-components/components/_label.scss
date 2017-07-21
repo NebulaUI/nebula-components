@@ -1,5 +1,8 @@
-.#{$nb-namespace}c-label {
-  display: block;
-  padding-bottom: ($nb-spacing-unit-half / 2);
-  font-weight: bold;
+@if $nb-use-label {
+  .#{$nb-namespace}c-label {
+    display: block;
+    padding-bottom: ($nb-spacing-unit-half / 2);
+    font-weight: $nb-label-font-weight;
+    font-family: $nb-label-font-family;
+  }
 }

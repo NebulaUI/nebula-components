@@ -1,0 +1,49 @@
+@mixin btn-color($bg, $txt: $nb-color-white) {
+  background-color: $bg;
+  transition: background-color $nb-transition-duration;
+
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
+    background-color: darken($bg, 10%);
+  }
+}
+
+@if $nb-use-btn {
+  .#{$nb-namespace}c-btn {
+    display: inline-block;
+    color: $nb-color-white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: $nb-button-border-radius;
+    text-decoration: none;
+    font-family: $nb-button-font-family;
+  }
+
+  .#{$nb-namespace}c-btn--sm {
+    padding: $nb-button-sm-padding;
+  }
+
+  .#{$nb-namespace}c-btn--md {
+    padding: $nb-button-md-padding;
+  }
+
+  .#{$nb-namespace}c-btn--lg {
+    padding: $nb-button-lg-padding;
+  }
+
+  .#{$nb-namespace}c-btn--full {
+    width: 100%;
+  }
+
+  .#{$nb-namespace}c-btn--alpha {
+    @include btn-color($nb-button-alpha-color);
+  }
+
+  .#{$nb-namespace}c-btn--beta {
+    @include btn-color($nb-button-beta-color);
+  }
+
+  .#{$nb-namespace}c-btn[disabled] {
+    opacity: 0.6;
+  }
+}

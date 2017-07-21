@@ -56,4 +56,7 @@ $nb-line-heights: (
   sm: 1.45,
   xs: 1.5,
   xxs: 1.5
-);
+) !default;
+
+$nb-font-family-alpha: sans-serif !default;
+$nb-font-family-beta: sans-serif !default;
