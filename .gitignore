@@ -1,8 +1,1 @@
-node_modules
-./idea/*
-*/.DS_Store
-src
-webpack.config.babel.js
-package.json
-yarn.lock
-npm-debug.log*
+
