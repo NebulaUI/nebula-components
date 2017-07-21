@@ -1,28 +1,3 @@
-@mixin center-icon($size) {
-  @function getLineHeight() {
-    @return map-get($nb-line-heights, $nb-font-size-base);
-  }
-
-  @function calcOffset($size, $base-size) {
-    $line-height-pixels: rem-to-px(getLineHeight(), $base-size);
-    $line-height-offset: (($line-height-pixels / 2px) * 1px);
-    @return ($line-height-offset - ($size / 2));
-  }
-
-  $base-size-map: map-get($nb-font-sizes-pixels, $nb-font-size-base);
-  $default-base-size: map-get($base-size-map, 'default');
-  transform: translateY(calcOffset($size, $default-base-size));
-
-  @each $key, $value in $nb-breakpoints {
-    @include nb-respond-to($key) {
-      @if map-has-key($base-size-map, $key) {
-        $base-size: map-get($base-size-map, $key);
-        transform: translateY(calcOffset($size, $base-size));
-      }
-    }
-  }
-}
-
 @if $nb-use-form-input {
   .#{$nb-namespace}c-form-input {
     position: relative;
@@ -51,7 +26,11 @@
     }
   }
 
-  .#{$nb-namespace}c-form-input__label--checkbox:before {
+  .#{$nb-namespace}c-form-input__label--radio::before {
+    border-radius: 50%;
+  }
+
+  .#{$nb-namespace}c-form-input__label--checkbox::before {
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
@@ -61,11 +40,20 @@
     background-color: $nb-color-grey-light;
   }
 
+  .#{$nb-namespace}c-form-input__input:checked + .#{$nb-namespace}c-form-input__label::before {
+    background-color: $nb-form-input-highlight-color;
+    transition: background-color $nb-transition-duration;
+  }
+
   .#{$nb-namespace}c-form-input__input:checked + .#{$nb-namespace}c-form-input__label--checkbox::before {
     background-image: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ibG4tYy1pY29uIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OTAuNDM0IiBoZWlnaHQ9IjQ5MC40MzMiIHZpZXdCb3g9IjAgMCA0OTAuNDM0IDQ5MC40MzMiIGZpbGw9IiNmZmZmZmYiID48cGF0aCBkPSJNNDcyLjAwMyA1OC4zNkw0NTguODcgNDcuMDc4Yy0yMS43OTctMTguNzMyLTU0LjU1My0xNi42NDQtNzMuNzk4IDQuNjk3TDE2NS4zOSAyOTUuMzZsLTY2LjMxMi01Ny4xMTNjLTIxLjc3NS0xOC43NTMtNTQuNTM2LTE2LjcwNy03My44MDQgNC42MWwtMTEuNjEgMTIuODVDNC4yNDYgMjY2LjExOC0uNjQzIDI3OS44NTQuMDY3IDI5My44ODZjLjcxNyAxNC4wMjIgNi45NzMgMjcuMTg3IDE3LjQwMiAzNi42bDEyMS41NTMgMTExLjMxYzEwLjUyNCA5Ljg4MyAyNC42MjggMTUuMDM3IDM5LjA0NCAxNC4yNzIgMTQuNDE2LS43NjQgMjcuODk0LTcuMzg3IDM3LjMxLTE4LjMzbDI2Mi4yNDYtMzA0LjcxYzkuMTYyLTEwLjY0NiAxMy43MTctMjQuNDk0IDEyLjY2LTM4LjQ5Ni0xLjA1NC0xNC4wMTItNy42MjgtMjcuMDIyLTE4LjI4LTM2LjE3NHoiIC8+PC9zdmc+');
     background-color: $nb-form-input-highlight-color;
     border-color: $nb-form-input-highlight-color;
     transition: background-color $nb-transition-duration;
+  }
+
+  .#{$nb-namespace}c-form-input__input:checked + .#{$nb-namespace}c-form-input__label--radio::before {
+    box-shadow: inset 0 0 0 3px $nb-color-site-background;
   }
 
   .#{$nb-namespace}c-form-input__input:disabled + .#{$nb-namespace}c-form-input__label {
