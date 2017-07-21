@@ -1,6 +1,9 @@
 node_modules
 npm-debug.log*
-demo/main.css
+demo/node_modules
+demo/yarn-error.log
+demo/dist
+demo/index.html
 */.DS_Store
 .idea/
 .DS_Store
