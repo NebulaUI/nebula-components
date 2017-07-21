@@ -30,6 +30,8 @@
       <a href="" class="c-btn c-btn--beta c-btn--md">Place another bet</a>
       <h4>Large</h4>
       <a href="" class="c-btn c-btn--alpha c-btn--lg">Place another bet</a>
+      <h4>Full width</h4>
+      <button href="" class="c-btn c-btn--alpha c-btn--md c-btn--full">Place another bet</button>
       <h4>Small</h4>
       <a href="" class="c-btn c-btn--alpha c-btn--sm">Place another bet</a>
       <h4>Disabled</h4>
@@ -55,10 +57,48 @@
         </div>
       </div>
       <h4>Checkbox</h4>
-      <div class="c-checkbox">
-        <input type="checkbox" class="c-checkbox__input" id="check-1">
-        <label for="check-1" class="c-checkbox__label">
-          <span class="c-checkbox__text">Select</span>
+      <div class="c-form-input">
+        <input type="checkbox" class="c-form-input__input" id="check-1">
+        <label for="check-1" class="c-form-input__label c-form-input__label--checkbox">
+          Select
+        </label>
+      </div>
+      <div class="c-form-input">
+        <input type="checkbox" disabled checked class="c-form-input__input" id="check-2">
+        <label for="check-2" class="c-form-input__label c-form-input__label--checkbox">
+          Select Disabled (checked)
+        </label>
+      </div>
+      <div class="c-form-input">
+        <input type="checkbox" disabled class="c-form-input__input" id="check-3">
+        <label for="check-3" class="c-form-input__label c-form-input__label--checkbox">
+          Select Disabled
+        </label>
+      </div>
+
+      <h4>Radio</h4>
+      <div class="c-form-input">
+        <input type="radio" name="radio" class="c-form-input__input" id="radio-1">
+        <label for="radio-1" class="c-form-input__label c-form-input__label--radio">
+          Select
+        </label>
+      </div>
+      <div class="c-form-input">
+        <input type="radio" name="radio" class="c-form-input__input" id="radio-4">
+        <label for="radio-4" class="c-form-input__label c-form-input__label--radio">
+          Select
+        </label>
+      </div>
+      <div class="c-form-input">
+        <input type="radio" name="radio" disabled checked class="c-form-input__input" id="radio-2">
+        <label for="radio-2" class="c-form-input__label c-form-input__label--radio">
+          Select Disabled (checked)
+        </label>
+      </div>
+      <div class="c-form-input">
+        <input type="radio" name="radio" disabled class="c-form-input__input" id="radio-3">
+        <label for="radio-3" class="c-form-input__label c-form-input__label--radio">
+          Select Disabled
         </label>
       </div>
     </div>
