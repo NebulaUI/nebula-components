@@ -1,28 +1,3 @@
-@mixin center-icon($size) {
-  @function getLineHeight() {
-    @return map-get($nb-line-heights, $nb-font-size-base);
-  }
-
-  @function calcOffset($size, $base-size) {
-    $line-height-pixels: rem-to-px(getLineHeight(), $base-size);
-    $line-height-offset: (($line-height-pixels / 2px) * 1px);
-    @return ($line-height-offset - ($size / 2));
-  }
-
-  $base-size-map: map-get($nb-font-sizes-pixels, $nb-font-size-base);
-  $default-base-size: map-get($base-size-map, 'default');
-  transform: translateY(calcOffset($size, $default-base-size));
-
-  @each $key, $value in $nb-breakpoints {
-    @include nb-respond-to($key) {
-      @if map-has-key($base-size-map, $key) {
-        $base-size: map-get($base-size-map, $key);
-        transform: translateY(calcOffset($size, $base-size));
-      }
-    }
-  }
-}
-
 @if $nb-use-form-input {
   .#{$nb-namespace}c-form-input {
     position: relative;
@@ -55,7 +30,7 @@
     border-radius: 50%;
   }
 
-  .#{$nb-namespace}c-form-input__label--checkbox:before {
+  .#{$nb-namespace}c-form-input__label--checkbox::before {
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
@@ -78,7 +53,7 @@
   }
 
   .#{$nb-namespace}c-form-input__input:checked + .#{$nb-namespace}c-form-input__label--radio::before {
-    box-shadow: inset 0 0 0px 3px $nb-color-site-background;
+    box-shadow: inset 0 0 0 3px $nb-color-site-background;
   }
 
   .#{$nb-namespace}c-form-input__input:disabled + .#{$nb-namespace}c-form-input__label {

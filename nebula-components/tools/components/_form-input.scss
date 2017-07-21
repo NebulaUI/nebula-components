@@ -1,0 +1,24 @@
+@mixin center-icon($size) {
+  @function getLineHeight() {
+    @return map-get($nb-line-heights, $nb-font-size-base);
+  }
+
+  @function calcOffset($size, $base-size) {
+    $line-height-pixels: rem-to-px(getLineHeight(), $base-size);
+    $line-height-offset: (($line-height-pixels / 2px) * 1px);
+    @return ($line-height-offset - ($size / 2));
+  }
+
+  $base-size-map: map-get($nb-font-sizes-pixels, $nb-font-size-base);
+  $default-base-size: map-get($base-size-map, 'default');
+  transform: translateY(calcOffset($size, $default-base-size));
+
+  @each $key, $value in $nb-breakpoints {
+    @include nb-respond-to($key) {
+      @if map-has-key($base-size-map, $key) {
+        $base-size: map-get($base-size-map, $key);
+        transform: translateY(calcOffset($size, $base-size));
+      }
+    }
+  }
+}
