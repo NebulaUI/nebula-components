@@ -4,13 +4,12 @@
   "description": "Building on top of Nebula CSS a series of common components",
   "main": "index.js",
   "scripts": {
-    "lint": "stylelint '*/**/*.scss' --syntax scss",
-    "sass": "node-sass --output-style compressed --include-path ./node_modules/nebula-css/ --include-path ./nebula-components -o demo demo/scss/main.scss",
-    "autoprefixer": "postcss -u autoprefixer --autoprefixer.browsers 'last 2 versions, ie 9-11' -r demo/main.css",
-    "build": "npm run sass && npm run autoprefixer",
-    "start": "npm run build && onchange '*/**/*.scss' -- npm run build",
-    "serve": "http-server demo -o",
-    "test": "npm run lint",
+    "lint:scss": "stylelint '*/**/*.scss' --syntax scss",
+    "lint:js": "cd demo && npm run lint",
+    "lint": "npm run lint:scss && npm run lint:js",
+    "build": "cd demo && npm run build",
+    "start": "cd demo && npm run start",
+    "test": "cd demo && npm install && npm run lint",
     "deploy": "npm run lint && npm run build && gh-pages -d demo"
   },
   "keywords": [
