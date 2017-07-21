@@ -1,16 +1,18 @@
 import React from 'react'
 
+import Btn from './Components/Btn'
+import Typography from './Components/Typography'
+import FormElements from './Components/FormElements'
+
 const App = () => (
-  <div className="o-site-wrap o-site-wrap--padding">
-    <div className="o-grid o-grid--matrix">
-      <div className="o-grid__item u-1/2@sm">
-        grid item 1
-      </div>
-      <div className="o-grid__item u-1/2@sm">
-        <button className="c-btn c-btn--alpha c-btn--md">Place test</button>
-      </div>
+  <section className="o-section-md">
+    <div className="o-site-wrap o-site-wrap--padding">
+      <h1>Nebula Components</h1>
     </div>
-  </div>
+    <Typography />
+    <Btn />
+    <FormElements />
+  </section>
 )
 
 export default App
