@@ -14,4 +14,18 @@
   .#{$nb-namespace}c-text-input--textarea {
     min-height: 10rem;
   }
+
+  .#{$nb-namespace}c-text-search {
+    position: relative;
+  }
+
+  .#{$nb-namespace}c-text-input--search {
+    padding-right: ($nb-text-input-padding * 5);
+  }
+
+  .#{$nb-namespace}c-btn-icon--search {
+    background-position: center center;
+    transform: rotate(90deg);
+    @include ln-input-icon(center, 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1Ni45NjYgNTYuOTY2IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PHBhdGggZD0iTTU1LjE0NiA1MS44ODdsLTEzLjU1OC0xNC4xYzMuNDg2LTQuMTQ1IDUuMzk2LTkuMzYgNS4zOTYtMTQuNzg3IDAtMTIuNjgyLTEwLjMxOC0yMy0yMy0yM3MtMjMgMTAuMzE4LTIzIDIzIDEwLjMxOCAyMyAyMyAyM2M0Ljc2IDAgOS4yOTgtMS40MzYgMTMuMTc3LTQuMTYybDEzLjY2MiAxNC4yMDhjLjU3LjU5MyAxLjM0LjkyIDIuMTYyLjkyLjc4IDAgMS41MTgtLjI5NyAyLjA4LS44MzcgMS4xOS0xLjE0OCAxLjIzLTMuMDUuMDgyLTQuMjQzek0yMy45ODQgNmM5LjM3NCAwIDE3IDcuNjI2IDE3IDE3cy03LjYyNiAxNy0xNyAxNy0xNy03LjYyNi0xNy0xNyA3LjYyNi0xNyAxNy0xN3oiIGZpbGw9IiNGRkYiLz48L3N2Zz4=');
+  }
 }
