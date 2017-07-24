@@ -10,7 +10,7 @@ const Typography = () => (
       <h4>Nebula Components</h4>
       <h5>Nebula Components</h5>
       <h6>Nebula Components</h6>
-      <p>helllo world test test nebula components</p>
+      <p>helllo world test test nebula components <a href="">I am a link</a> lorem ipusm</p>
     </div>
   </section>
 )

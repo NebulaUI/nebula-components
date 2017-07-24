@@ -5,6 +5,7 @@
   &:not([disabled]):hover,
   &:not([disabled]):focus {
     background-color: darken($bg, 10%);
+    color: $txt;
   }
 }
 

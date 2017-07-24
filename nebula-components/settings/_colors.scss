@@ -14,8 +14,9 @@ $nb-color-black: #0c0c0c !default;
 
 // #TYPOGRAPHY
 $nb-color-base-text: $nb-color-grey-v-dark !default;
+$nb-color-link: $nb-color-alpha !default;
 
 // #GENERAL
-$nb-color-site-background: $nb-color-white !default;
-$nb-color-base-border: $nb-color-grey !default;
+$nb-color-site-background: $nb-color-grey-v-light !default;
+$nb-color-base-border: $nb-color-grey-light !default;
 $nb-color-background-disabled: $nb-color-grey-light !default;

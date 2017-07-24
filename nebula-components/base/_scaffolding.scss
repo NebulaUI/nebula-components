@@ -4,3 +4,12 @@ body {
   color: $nb-color-base-text;
   background-color: $nb-color-site-background;
 }
+
+a {
+  color: $nb-color-link;
+
+  &:hover,
+  &:focus {
+    color: darken($nb-color-link, 10%);
+  }
+}
