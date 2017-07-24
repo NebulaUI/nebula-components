@@ -21,6 +21,7 @@
       left: 0;
       width: $nb-form-input-icon-size;
       height: $nb-form-input-icon-size;
+      background: $nb-form-input-background;
       border: 1px solid $nb-form-input-border-color;
       content: ' ';
     }
@@ -53,7 +54,7 @@
   }
 
   .#{$nb-namespace}c-form-input__input:checked + .#{$nb-namespace}c-form-input__label--radio::before {
-    box-shadow: inset 0 0 0 3px $nb-color-site-background;
+    box-shadow: inset 0 0 0 3px $nb-form-input-background;
   }
 
   .#{$nb-namespace}c-form-input__input:disabled + .#{$nb-namespace}c-form-input__label {
