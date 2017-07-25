@@ -44,15 +44,6 @@
     @include btn-color($nb-button-beta-color);
   }
 
-  .#{$nb-namespace}c-btn-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: (($nb-text-input-padding * 2) - 0.05);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
   .#{$nb-namespace}c-btn[disabled] {
     opacity: 0.6;
   }
