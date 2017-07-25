@@ -12,6 +12,10 @@
   }
 
   .#{$nb-namespace}c-text-input--textarea {
-    min-height: 10rem;
+    min-height: $nb-text-input-textarea-min-height;
+  }
+
+  &.#{$nb-namespace}c-text-input--sm {
+    padding: ($nb-text-input-padding / 2);
   }
 }
