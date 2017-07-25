@@ -17,7 +17,6 @@ const TextInput = () => (
         <textarea id="text-input-3" className="c-text-input c-text-input--textarea" placeholder="Your message…" />
       </div>
     </div>
-    <hr />
     <h4>Text input: Small</h4>
     <div className="o-grid o-grid--gutter-md o-grid--matrix">
       <div className="o-grid__item u-1/2@sm">
@@ -25,7 +24,6 @@ const TextInput = () => (
         <input type="text" id="text-input-1" placeholder="Nebula" className="c-text-input c-text-input--sm" />
       </div>
     </div>
-    <hr />
   </div>
 )
 

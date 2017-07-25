@@ -16,6 +16,6 @@
   }
 
   &.#{$nb-namespace}c-text-input--sm {
-    padding: ($nb-text-input-padding / 2);
+    padding: $nb-text-input-padding-sm;
   }
 }
