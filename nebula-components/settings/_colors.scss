@@ -12,6 +12,13 @@ $nb-color-grey-dark: #4c4c4c !default;
 $nb-color-grey-v-dark: #242424 !default;
 $nb-color-black: #0c0c0c !default;
 
+//STATUS
+$nb-color-primary: $nb-color-alpha;
+$nb-color-success: #6c9c35;
+$nb-color-info: $nb-color-beta;
+$nb-color-warning: #ffb329;
+$nb-color-danger: #fd1818;
+
 // #TYPOGRAPHY
 $nb-color-base-text: $nb-color-grey-v-dark !default;
 $nb-color-link: $nb-color-alpha !default;

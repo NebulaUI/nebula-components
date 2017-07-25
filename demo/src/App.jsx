@@ -4,6 +4,7 @@ import Buttons from './Components/Buttons'
 import Typography from './Components/Typography'
 import FormElements from './Components/FormElements'
 import Navbar from './Components/Navbar'
+import Cards from './Components/Cards'
 
 const App = () => (
   <div>
@@ -15,6 +16,7 @@ const App = () => (
       <Typography />
       <Buttons />
       <FormElements />
+      <Cards />
     </section>
   </div>
 )

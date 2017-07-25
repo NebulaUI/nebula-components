@@ -1,0 +1,38 @@
+@if $nb-use-card {
+  .#{$nb-namespace}c-card {
+    background-color: $nb-card-background;
+    border-left-width: $nb-card-border-width;
+    border-left-style: solid;
+  }
+
+  .#{$nb-namespace}c-card--primary {
+    border-color: $nb-card-color-primary;
+  }
+
+  .#{$nb-namespace}c-card--success {
+    border-color: $nb-card-color-success;
+  }
+
+  .#{$nb-namespace}c-card--info {
+    border-color: $nb-card-color-info;
+  }
+
+  .#{$nb-namespace}c-card--warning {
+    border-color: $nb-card-color-warning;
+  }
+
+  .#{$nb-namespace}c-card--danger {
+    border-color: $nb-card-color-danger;
+  }
+
+  .#{$nb-namespace}c-card__img--placeholder {
+    height: $nb-card-height-img; //TODO
+    background-image: url('data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iNDcwIiBoZWlnaHQ9IjM2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDcwIDM2MCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnM+PHN0eWxlPiNob2xkZXJfMTVkN2E0NjQxMGEgdGV4dCB7IGZpbGw6cmdiYSgyNTUsMjU1LDI1NSwuNzUpO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LWZhbWlseTpIZWx2ZXRpY2EsIG1vbm9zcGFjZTtmb250LXNpemU6MTJwdCB9PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWQ3YTQ2NDEwYSI+PHBhdGggZmlsbD0iIzc3NyIgZD0iTTAgMGgyMzV2MTgwSDB6Ii8+PHRleHQgeD0iODYuODA1IiB5PSI5NS41NSI+NDcweDM2MDwvdGV4dD48L2c+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .#{$nb-namespace}c-card-block {
+    padding: $nb-card-padding;
+  }
+}
