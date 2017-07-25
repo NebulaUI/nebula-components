@@ -1,3 +1,7 @@
 {
-  "extends": "stylelint-config-nebula"
+  "extends": "stylelint-config-nebula",
+  "ignoreFiles": [
+    "demo/dist/main.css",
+    "nebula-components/tools/**/*.scss"
+  ]
 }
