@@ -1366,9 +1366,9 @@ nan@^2.3.0, nan@^2.3.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
 
-nebula-css@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/nebula-css/-/nebula-css-2.5.0.tgz#e10baffd4f4914575986dd240e94f99fd003a735"
+nebula-css@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/nebula-css/-/nebula-css-2.6.0.tgz#8dbde3c8c8a1a038bd134ffa6beba03bec814e19"
 
 node-gyp@^3.3.1:
   version "3.6.2"
@@ -1796,11 +1796,18 @@ postcss-selector-parser@^2.0.0, postcss-selector-parser@^2.1.1, postcss-selector
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
+postcss-sorting@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-sorting/-/postcss-sorting-3.0.1.tgz#13d42b255e7881fb33d19dcaa4085580be90664c"
+  dependencies:
+    lodash "^4.17.4"
+    postcss "^6.0.1"
+
 postcss-value-parser@^3.1.1, postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@>=5.0.19, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.3, postcss@^6.0.6:
+postcss@>=5.0.19, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.3, postcss@^6.0.6, postcss@^6.0.7:
   version "6.0.8"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.8.tgz#89067a9ce8b11f8a84cbc5117efc30419a0857b3"
   dependencies:
@@ -1820,16 +1827,6 @@ postcss@^5.0.0, postcss@^5.0.18, postcss@^5.0.20, postcss@^5.0.21, postcss@^5.0.
 preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
-
-primer-support@^4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/primer-support/-/primer-support-4.0.7.tgz#c9c433c5a597a78226870ea3d18c4bf0e96eeab4"
-
-primer-utilities@^4.3.5:
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/primer-utilities/-/primer-utilities-4.3.5.tgz#42c58e681459493fe99f2956c4b3bf7c04005d67"
-  dependencies:
-    primer-support "^4.0.7"
 
 process-nextick-args@~1.0.6:
   version "1.0.7"
@@ -2236,21 +2233,29 @@ stylehacks@^2.3.2:
     text-table "^0.2.0"
     write-file-stdout "0.0.2"
 
-stylelint-config-sass-guidelines@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-sass-guidelines/-/stylelint-config-sass-guidelines-2.2.0.tgz#3c61a083dec14c87405b17f8f1e3bf26ccdfd3c5"
+stylelint-config-nebula@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-nebula/-/stylelint-config-nebula-0.2.0.tgz#393d43b39e0e0c936be9dd198d70bfcd72b2399e"
   dependencies:
-    stylelint-order "^0.4.3"
-    stylelint-scss "^1.4.1"
-    stylelint-selector-no-utility "^1.1.0"
+    stylelint-config-sass-guidelines "^3.0.1"
+    stylelint-scss "^1.5.1"
+    stylelint-selector-bem-pattern "^1.1.0"
 
-stylelint-order@^0.4.3:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-0.4.4.tgz#db7dfca0541b5062010c7e2e21e745791fc088ac"
+stylelint-config-sass-guidelines@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/stylelint-config-sass-guidelines/-/stylelint-config-sass-guidelines-3.0.1.tgz#4e4ca13091b39eaa7bec3eb15e01a269b326ae7c"
+  dependencies:
+    stylelint-order "^0.6.0"
+    stylelint-scss "^1.4.1"
+
+stylelint-order@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-0.6.0.tgz#72222be0c64d8782b2fc237d0d9ac974039f968b"
   dependencies:
     lodash "^4.17.4"
-    postcss "^5.2.16"
-    stylelint "^7.9.0"
+    postcss "^6.0.7"
+    postcss-sorting "^3.0.1"
+    stylelint "^8.0.0"
 
 stylelint-scss@^1.4.1, stylelint-scss@^1.5.1:
   version "1.5.1"
@@ -2271,13 +2276,6 @@ stylelint-selector-bem-pattern@^1.1.0:
     postcss ">=5.0.19"
     postcss-bem-linter "^2.1.0"
     stylelint ">=3.0.2"
-
-stylelint-selector-no-utility@^1.1.0:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/stylelint-selector-no-utility/-/stylelint-selector-no-utility-1.6.1.tgz#a2424235cc8092e9731613fb0f362f72d8338043"
-  dependencies:
-    primer-utilities "^4.3.5"
-    stylelint "^7.0.0"
 
 stylelint@>=3.0.2, stylelint@^8.0.0:
   version "8.0.0"
@@ -2320,7 +2318,7 @@ stylelint@>=3.0.2, stylelint@^8.0.0:
     svg-tags "^1.0.0"
     table "^4.0.1"
 
-stylelint@^7.0.0, stylelint@^7.0.3, stylelint@^7.9.0:
+stylelint@^7.0.3:
   version "7.13.0"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.13.0.tgz#111f97b6da72e775c80800d6bb6f5f869997785d"
   dependencies:

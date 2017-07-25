@@ -1,0 +1,12 @@
+@mixin nb-input-icon($direction, $icon, $size: 1.5) {
+  @if $direction == 'center' {
+    background-position: center center;
+  } @else {
+    padding-#{$direction}: ($nb-spacing-unit-double + $size);
+    background-position: $direction $nb-spacing-unit top 50%;
+  }
+
+  background-size: auto ($size + rem);
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;base64,#{$icon}');
+}

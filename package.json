@@ -31,11 +31,9 @@
     "onchange": "^3.2.1",
     "postcss-cli": "^4.1.0",
     "stylelint": "^8.0.0",
-    "stylelint-config-sass-guidelines": "^2.2.0",
-    "stylelint-scss": "^1.5.1",
-    "stylelint-selector-bem-pattern": "^1.1.0"
+    "stylelint-config-nebula": "^0.2.0"
   },
   "dependencies": {
-    "nebula-css": "^2.5.0"
+    "nebula-css": "^2.6.0"
   }
 }
