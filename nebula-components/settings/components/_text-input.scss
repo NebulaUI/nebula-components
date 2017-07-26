@@ -2,3 +2,5 @@ $nb-text-input-backgound: $nb-color-white !default;
 $nb-text-input-border-color: $nb-color-grey !default;
 $nb-text-input-border-radius: $nb-border-radius !default;
 $nb-text-input-padding: $nb-spacing-unit !default;
+$nb-text-input-padding-sm: ($nb-text-input-padding / 2);
+$nb-text-input-textarea-min-height: 10rem !default;
