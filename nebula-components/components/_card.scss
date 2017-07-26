@@ -1,36 +1,7 @@
-@mixin responsive-image($image-width, $image-height) {
-  background-size: 100%;
-  height: 0;
-  padding-bottom: percentage($image-height / $image-width);
-  display: block;
-}
-
 @if $nb-use-card {
   .#{$nb-namespace}c-card {
     background-color: $nb-card-background;
-    border-left-width: $nb-card-border-width;
-    border-left-style: solid;
     box-shadow: 3px 1px 5px rgba($nb-card-box-shadow-color, $nb-card-box-shadow-alpha);
-  }
-
-  .#{$nb-namespace}c-card--primary {
-    border-color: $nb-card-color-primary;
-  }
-
-  .#{$nb-namespace}c-card--success {
-    border-color: $nb-card-color-success;
-  }
-
-  .#{$nb-namespace}c-card--info {
-    border-color: $nb-card-color-info;
-  }
-
-  .#{$nb-namespace}c-card--warning {
-    border-color: $nb-card-color-warning;
-  }
-
-  .#{$nb-namespace}c-card--danger {
-    border-color: $nb-card-color-danger;
   }
 
   .#{$nb-namespace}c-card__img {
@@ -46,3 +17,27 @@
     padding: $nb-card-padding;
   }
 }
+
+@if $nb-use-status-card {
+  .#{$nb-namespace}c-card--status {
+    border-left-width: $nb-card-status-border-width;
+    border-left-style: $nb-card-status-border-style;
+    border-left-color: $nb-card-status-border-color;
+  }
+  .#{$nb-namespace}c-card-status--success {
+      border-color: $nb-card-status-color-success;
+    }
+
+  .#{$nb-namespace}c-card-status--info {
+    border-color: $nb-card-status-color-info;
+  }
+
+  .#{$nb-namespace}c-card-status--warning {
+    border-color: $nb-card-status-color-warning;
+  }
+
+  .#{$nb-namespace}c-card-status--error {
+    border-color: $nb-card-status-color-error;
+  }
+}
+
