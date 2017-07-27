@@ -1,0 +1,45 @@
+@if $nb-use-flyout {
+  .#{$nb-namespace}c-flyout {
+    position: relative;
+    max-width: $nb-flyout-max-width;
+  }
+
+  .#{$nb-namespace}c-flyout__content {
+    display: none;
+    position: absolute;
+    transform: translateY(-100%);
+    @include nb-card;
+  }
+
+  .#{$nb-namespace}c-flyout__content--ne {
+    top: 100%;
+    right: 0;
+  }
+
+  .#{$nb-namespace}c-flyout__content--se {
+    bottom: 100%;
+    right: 0;
+  }
+
+  .#{$nb-namespace}c-flyout__content--sw {
+    bottom: 100%;
+    left: 0;
+  }
+
+  .#{$nb-namespace}c-flyout__content--nw {
+    top: 100%;
+    left: 0;
+  }
+
+  .#{$nb-namespace}c-flyout.is-open > .#{$nb-namespace}c-flyout__content {
+    display: block;
+    transform: translateY(100);
+    transition: transform $nb-transition-duration;
+  }
+
+  .#{$nb-namespace}c-flyout__toggle {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
