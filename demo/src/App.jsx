@@ -4,6 +4,8 @@ import Buttons from './Components/Buttons'
 import Typography from './Components/Typography'
 import FormElements from './Components/FormElements'
 import Navbar from './Components/Navbar'
+import Cards from './Components/Cards/'
+import StatusCards from './Components/Cards/StatusCards'
 
 const App = () => (
   <div>
@@ -15,6 +17,8 @@ const App = () => (
       <Typography />
       <Buttons />
       <FormElements />
+      <Cards />
+      <StatusCards />
     </section>
   </div>
 )
