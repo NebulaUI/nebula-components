@@ -20,8 +20,8 @@ const Flyout = ({ isOpen, id, handleClick }) => (
 
 Flyout.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
-  isOpen: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 }
 
 export default Flyout
