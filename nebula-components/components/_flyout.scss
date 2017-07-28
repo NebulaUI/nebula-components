@@ -1,45 +1,56 @@
 @if $nb-use-flyout {
   .#{$nb-namespace}c-flyout {
     position: relative;
-    max-width: $nb-flyout-max-width;
-  }
-
-  .#{$nb-namespace}c-flyout__content {
-    display: none;
-    position: absolute;
-    transform: translateY(-100%);
-    @include nb-card;
-  }
-
-  .#{$nb-namespace}c-flyout__content--ne {
-    top: 100%;
-    right: 0;
-  }
-
-  .#{$nb-namespace}c-flyout__content--se {
-    bottom: 100%;
-    right: 0;
-  }
-
-  .#{$nb-namespace}c-flyout__content--sw {
-    bottom: 100%;
-    left: 0;
-  }
-
-  .#{$nb-namespace}c-flyout__content--nw {
-    top: 100%;
-    left: 0;
+    display: inline-block;
   }
 
   .#{$nb-namespace}c-flyout.is-open > .#{$nb-namespace}c-flyout__content {
-    display: block;
-    transform: translateY(100);
-    transition: transform $nb-transition-duration;
+    transform: scale(1);
   }
 
-  .#{$nb-namespace}c-flyout__toggle {
+  .#{$nb-namespace}c-flyout__content {
     position: absolute;
+    z-index: 1;
+    transform: scale(0);
+    min-width: $nb-flyout-min-width;
+    @include nb-flyout;
+  }
+
+  .#{$nb-namespace}c-flyout__content--ne {
+    bottom: 100%;
+    left: 0;
+    &::after {
+      top: 100%;
+      @include nb-flyout-triangle(down);
+    }
+  }
+
+  .#{$nb-namespace}c-flyout__content--se {
     top: 100%;
     left: 0;
+    &::after {
+      bottom: 100%;
+      @include nb-flyout-triangle(up);
+    }
+  }
+
+  .#{$nb-namespace}c-flyout__content--sw {
+    top: 100%;
+    right: 0%;
+    &::after {
+      right: $nb-flyout-triangle-positioning;
+      bottom: 100%;
+      @include nb-flyout-triangle(up);
+    }
+  }
+
+  .#{$nb-namespace}c-flyout__content--nw {
+    bottom: 100%;
+    right: 0%;
+    &::after {
+      top: 100%;
+      right: $nb-flyout-triangle-positioning;
+      @include nb-flyout-triangle(down);
+    }
   }
 }

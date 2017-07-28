@@ -1,0 +1,19 @@
+import React, { Component } from 'react'
+
+import classNames from 'classnames'
+
+const Flyout = ({ isOpen, id, handleClick }) => (
+  <div className="o-grid__item u-1/4@sm">
+    <div className={classNames('c-flyout', { 'is-open': isOpen })}>
+      <button className="c-flyout__toggle" onClick={() => { handleClick(id) }}>toggle me: {id}</button>
+      <div className={`c-flyout__content c-flyout__content--${id.toLowerCase()}`}>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Aspernatur culpa ex explicabo illo inventore laboriosam neque,
+        nihil omnis ratione ullam. Error ex, excepturi incidunt ipsum iure libero
+        maiores quidem voluptates.
+      </div>
+    </div>
+  </div>
+)
+
+export default Flyout
