@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import Flyout from './Flyout'
 
@@ -7,11 +8,11 @@ const Flyouts = ({ handleClick, openFlyouts }) => (
     <div className="o-site-wrap o-site-wrap--padding">
       <h4>Flyouts</h4>
       <div className="o-grid o-grid--gutter-md o-grid--matrix">
-        {Object.keys(openFlyouts).map(flyoutKey => (
+        {Object.keys(openFlyouts).map(key => (
           <Flyout
-            isOpen={openFlyouts[flyoutKey]}
-            id={flyoutKey}
-            key={flyoutKey}
+            isOpen={openFlyouts[key]}
+            id={key}
+            key={key}
             handleClick={handleClick}
           />),
         )}
@@ -19,5 +20,15 @@ const Flyouts = ({ handleClick, openFlyouts }) => (
     </div>
   </section>
 )
+
+Flyouts.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  openFlyouts: PropTypes.shape({
+    NE: PropTypes.bool.isRequired,
+    SE: PropTypes.bool.isRequired,
+    SW: PropTypes.bool.isRequired,
+    NW: PropTypes.bool.isRequired,
+  }).isRequired,
+}
 
 export default Flyouts

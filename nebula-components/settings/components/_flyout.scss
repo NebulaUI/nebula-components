@@ -5,4 +5,4 @@ $nb-flyout-box-shadow: 1px 0 5px rgba($nb-color-black, 0.15) !default;
 
 $nb-flyout-triangle-color: $nb-color-white !default;
 $nb-flyout-triangle-size: 0.5rem !default;
-$nb-flyout-triangle-positioning: ($nb-flyout-triangle-size * 2) !default;
+$nb-flyout-triangle-positioning: $nb-spacing-unit !default;

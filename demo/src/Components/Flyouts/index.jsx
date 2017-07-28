@@ -19,7 +19,7 @@ class FlyoutsContainer extends Component {
     const newState = Object.keys(this.state.openFlyouts).reduce((acc, curr) => {
       acc[curr] = false
       return acc
-    }, {});
+    }, {})
     this.setState({
       openFlyouts: {
         ...newState,
@@ -35,3 +35,4 @@ class FlyoutsContainer extends Component {
 }
 
 export default FlyoutsContainer
+
