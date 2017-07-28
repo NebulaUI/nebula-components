@@ -6,7 +6,7 @@ const Cards = () => (
       <h4>Cards— Base</h4>
       <div className="o-grid o-grid--gutter-md o-grid--matrix">
 
-        <div className="o-grid__item u-1/3">
+        <div className="o-grid__item u-1/3@sm">
           <div className="c-card">
             <h3>Title</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequuntur

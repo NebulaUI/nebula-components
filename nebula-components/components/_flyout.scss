@@ -1,0 +1,56 @@
+@if $nb-use-flyout {
+  .#{$nb-namespace}c-flyout {
+    position: relative;
+    display: inline-block;
+  }
+
+  .#{$nb-namespace}c-flyout.is-open > .#{$nb-namespace}c-flyout__content {
+    transform: scale(1);
+  }
+
+  .#{$nb-namespace}c-flyout__content {
+    position: absolute;
+    z-index: 1;
+    transform: scale(0);
+  }
+
+  .#{$nb-namespace}c-flyout__content--ne {
+    bottom: calc(100% + #{$nb-spacing-unit-half});
+    left: 0;
+
+    &::after {
+      left: $nb-flyout-triangle-positioning;
+      @include nb-triangle(down);
+    }
+  }
+
+  .#{$nb-namespace}c-flyout__content--se {
+    top: calc(100% + #{$nb-spacing-unit-half});
+    left: 0;
+
+    &::after {
+      left: $nb-flyout-triangle-positioning;
+      @include nb-triangle(up);
+    }
+  }
+
+  .#{$nb-namespace}c-flyout__content--sw {
+    top: calc(100% + #{$nb-spacing-unit-half});
+    right: 0%;
+
+    &::after {
+      right: $nb-flyout-triangle-positioning;
+      @include nb-triangle(up);
+    }
+  }
+
+  .#{$nb-namespace}c-flyout__content--nw {
+    bottom: calc(100% + #{$nb-spacing-unit-half});
+    right: 0%;
+
+    &::after {
+      right: $nb-flyout-triangle-positioning;
+      @include nb-triangle(down);
+    }
+  }
+}
