@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar'
 import Cards from './Components/Cards'
 import StatusCards from './Components/Cards/StatusCards'
 import Flyouts from './Components/Flyouts'
+import Tabs from './Components/Tabs'
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <Cards />
       <StatusCards />
       <Flyouts />
+      <Tabs />
     </section>
   </div>
 )
