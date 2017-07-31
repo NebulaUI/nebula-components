@@ -1,28 +1,48 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import T from 'prop-types'
+import classNames from 'classnames'
 
-import Tab from './Tab'
-import TabsContent from './TabsContent'
+import TabList from './TabList'
+import TabPanels from './TabPanels'
 
-const Tabs = ({ tabs, isActive, id, handleClick }) => (
-  <section className="o-section-md">
-    <div className="o-site-wrap o-site-wrap--padding">
-      <h4>Tabs</h4>
-      <div className="o-grid o-grid--gutter-md o-grid--matrix">
-        <Tab />
-        <TabsContent />
-      </div>
-    </div>
-  </section>
-)
+class Tabs extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      activeIndex: 0,
+    }
+  }
+
+  activateTab = (activeIndex) => {
+    this.setState({
+      activeIndex,
+    })
+  }
+
+  render() {
+    const { activeIndex } = this.state;
+    const children = React.Children.map(this.props.children, (child) => {
+      if (child.type === TabList) {
+        return React.cloneElement(child, {
+          activeIndex,
+          activateTab: this.activateTab,
+        })
+      } else if (child.type === TabPanels) {
+        return React.cloneElement(child, {
+          activeIndex,
+        })
+      }
+
+      return child
+    })
+    return <div className={classNames('c-tabs', this.props.className)}>{children}</div>
+  }
+}
 
 Tabs.propTypes = {
-  tabs: PropTypes.shape({
-    isActive: PropTypes.bool.isRequired,
-    id: PropTypes.string.isRequired,
-  }),
-  isActive: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  children: T.node,
+  className: T.string,
 }
 
 export default Tabs
