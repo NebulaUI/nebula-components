@@ -3,12 +3,12 @@ import T from 'prop-types'
 import classNames from 'classnames'
 
 const Tab = ({ children, index, activateTab, isActive, disabled, className }) => {
-  const handleClick = () => activateTab(index);
+  const handleClick = () => { activateTab(index) }
   return (
     <button
       disabled={disabled}
       onClick={handleClick}
-      className={classNames('c-tabs', className, { 'is-active': isActive })}
+      className={classNames('c-tab', className, { 'is-active': isActive })}
     >
       {children}
     </button>

@@ -10,7 +10,9 @@ const TabList = ({ children, activateTab, activeIndex }) => {
     })
   })
   return (
-    <div>{enhancedChildren}</div>
+    <div>
+      {enhancedChildren}
+    </div>
   )
 }
 

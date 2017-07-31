@@ -21,7 +21,7 @@ class Tabs extends Component {
   }
 
   render() {
-    const { activeIndex } = this.state;
+    const { activeIndex } = this.state
     const children = React.Children.map(this.props.children, (child) => {
       if (child.type === TabList) {
         return React.cloneElement(child, {
