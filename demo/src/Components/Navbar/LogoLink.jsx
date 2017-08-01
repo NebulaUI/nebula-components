@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 const LogoLink = ({ children, className, to }) => (
   <a href={to} className={classNames('c-navbar__logo', className)}>
-    Nebula Components
+    { children }
   </a>
 )
 
