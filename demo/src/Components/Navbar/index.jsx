@@ -61,7 +61,9 @@ const MyNavbar = () => {
           </DropdownContent>
         </Dropdown>
       )
-      : <Item key={label}><Link to={path}>{label}</Link></Item>
+      : (
+        <Item key={label}><Link to={path}>{label}</Link></Item>
+      )
     ))
 
   return (
@@ -81,58 +83,5 @@ const MyNavbar = () => {
     </Navbar>
   )
 }
-
-
-const MyNavbar1 = () => (
-  <Navbar>
-    <Overlay />
-    <Wrap>
-      <Toggle>
-        <ToggleBars />
-      </Toggle>
-      <LogoLink to="/">
-        Nebula Components
-      </LogoLink>
-      <Nav>
-
-        <Item>
-          <Link to="/">Space Time</Link>
-        </Item>
-        <Dropdown>
-          <DropdownToggle>
-            Galaxies
-          </DropdownToggle>
-          <DropdownContent>
-            <Item>
-              <Link to="/">Milky way</Link>
-            </Item>
-            <Item>
-              <Link to="/">Andromeda</Link>
-            </Item>
-          </DropdownContent>
-        </Dropdown>
-        <Item>
-          <Link to="/">Pulsars</Link>
-        </Item>
-        <Dropdown>
-          <DropdownToggle>
-            Black Holes
-          </DropdownToggle>
-          <DropdownContent>
-            <Item>
-              <Link to="/">Supermassive</Link>
-            </Item>
-            <Item>
-              <Link to="/">Quantum</Link>
-            </Item>
-          </DropdownContent>
-        </Dropdown>
-        <Item>
-          <Link to="/">Supernovas</Link>
-        </Item>
-      </Nav>
-    </Wrap>
-  </Navbar>
-)
 
 export default MyNavbar
