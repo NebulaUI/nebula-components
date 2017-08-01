@@ -1,18 +1,15 @@
 import React from 'react'
-import T from 'prop-types'
-import classNames from 'classnames'
 
-import TabList from './TabList'
+import List from './List'
 import Tabs from './Tabs'
 import Tab from './Tab'
-import TabPanels from './TabPanels'
-import TabPanel from './TabPanel'
+import Panels from './Panels'
+import Panel from './Panel'
 
 const animals = [
   {
     name: 'Cats',
     description: 'A domestic and lazy animal',
-    disabled: true,
   }, {
     name: 'Dogs',
     description: 'Likes eating bones',
@@ -20,41 +17,57 @@ const animals = [
   {
     name: 'Fish',
     description: 'Likes swimming',
+    // disabled: true,
   },
   {
     name: 'Spider',
     description: 'Likes eating flies',
   },
   {
-    name: 'Spider asdfdafsafsf fasdfdsafadsfdsaffadsf',
+    name: 'Horse',
+    description: 'Likes eating flies',
+  },
+  {
+    name: 'Pig',
+    description: 'Likes eating flies',
+  },
+  {
+    name: 'Elephant',
+    description: 'Likes eating flies',
+  },
+  {
+    name: 'Giraffe',
+    description: 'Likes eating flies',
+  },
+  {
+    name: 'Hippo',
     description: 'Likes eating flies',
   },
 ]
 
-const MyTabs = ({ className }) => (
+const MyTabs = () => (
   <section className="o-section-md">
     <div className="o-site-wrap o-site-wrap--padding">
       <h4>Tabs</h4>
-      <div className="o-grid o-grid--gutter-md o-grid--matrix">
-        <div className={classNames('o-grid__item u-1/2@sm c-tabs-container', className)}>
-          <Tabs>
-            <TabList>
-              {animals.map(({ disabled, name }) =>
-                <Tab key={name} disabled={disabled}>{name}</Tab>)}
-            </TabList>
-            <TabPanels>
-              {animals.map(({ disabled, description }) =>
-                <TabPanel key={description} disabled={disabled}>{description}</TabPanel>)}
-            </TabPanels>
-          </Tabs>
-        </div>
-      </div>
+      <Tabs>
+        <List>
+          {animals.map(({ disabled, name }) =>
+            <Tab key={name} disabled={disabled}>{name}</Tab>)}
+        </List>
+        <Panels>
+          {animals.map(({ disabled, description }) => (
+            <Panel
+              className="c-card"
+              key={description}
+              disabled={disabled}
+            >
+              {description}
+            </Panel>
+          ))}
+        </Panels>
+      </Tabs>
     </div>
   </section>
 )
-
-MyTabs.propTypes = {
-  className: T.string,
-}
 
 export default MyTabs

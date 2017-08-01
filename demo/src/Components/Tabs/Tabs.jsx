@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import T from 'prop-types'
 import classNames from 'classnames'
 
-import TabList from './TabList'
-import TabPanels from './TabPanels'
+import List from './List'
+import Panels from './Panels'
 
 class Tabs extends Component {
   constructor() {
@@ -23,12 +23,12 @@ class Tabs extends Component {
   render() {
     const { activeIndex } = this.state
     const children = React.Children.map(this.props.children, (child) => {
-      if (child.type === TabList) {
+      if (child.type === List) {
         return React.cloneElement(child, {
           activeIndex,
           activateTab: this.activateTab,
         })
-      } else if (child.type === TabPanels) {
+      } else if (child.type === Panels) {
         return React.cloneElement(child, {
           activeIndex,
         })

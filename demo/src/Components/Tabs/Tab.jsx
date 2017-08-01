@@ -8,7 +8,7 @@ const Tab = ({ children, index, activateTab, isActive, disabled, className }) =>
     <button
       disabled={disabled}
       onClick={handleClick}
-      className={classNames('c-tab', className, { 'is-active': isActive })}
+      className={classNames('c-tabs__tab', className, { 'is-active': isActive })}
     >
       {children}
     </button>

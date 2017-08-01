@@ -1,5 +1,6 @@
-$nb-tabs-background: $nb-color-grey-v-light !default;
+$nb-tabs-background: $nb-color-white !default;
 
+$nb-tab-padding: $nb-spacing-unit !default;
 $nb-tab-color: $nb-color-grey-v-dark !default;
 $nb-tab-background: $nb-color-grey-v-light !default;
 $nb-tab-transition: background-color 0.5s ease !default;
@@ -7,11 +8,9 @@ $nb-tab-transition: background-color 0.5s ease !default;
 $nb-tab-color-disabled: $nb-color-grey !default;
 $nb-tab-background-disabled: $nb-color-grey-v-light !default;
 
-$nb-tab-padding: $nb-spacing-unit !default;
-$nb-tab-color-active: $nb-color-alpha !default;
+$nb-tab-color-active: inherit !default;
 $nb-tab-background-active: $nb-color-white !default;
 $nb-tab-border-active: 5px solid $nb-color-alpha !default;
-$nb-tab-transition-active: color 1s ease !default;
 
 $nb-panel-padding: $nb-spacing-unit !default;
 $nb-panel-background: $nb-color-white !default;
