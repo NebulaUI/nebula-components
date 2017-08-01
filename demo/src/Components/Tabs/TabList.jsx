@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 const TabList = ({ children, activateTab, activeIndex, className }) => {
   const enhancedChildren = React.Children.map(children, (child, index) => {
-    React.cloneElement(child, {
+    return React.cloneElement(child, {
       index,
       activateTab,
       isActive: index === activeIndex,
