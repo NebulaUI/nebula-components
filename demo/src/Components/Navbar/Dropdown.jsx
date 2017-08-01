@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import T from 'prop-types'
 import classNames from 'classnames'
+
+import DropdownToggle from './DropdownToggle'
 
 class Dropdown extends Component {
   constructor() {
@@ -10,29 +13,52 @@ class Dropdown extends Component {
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside)
+  }
+
   handleToggle = () => {
     this.setState({
       isOpen: !this.state.isOpen,
     })
   }
 
+  handleClickOutside = (e) => {
+    if (!this.wrapperRef.contains(e.target)) {
+      this.setState({
+        isOpen: false,
+      })
+    }
+  }
+
   render() {
+    const { handleToggle, state: { isOpen }, props: { children, className } } = this
+    const enhancedChildren = React.Children.map(children, (child) => {
+      if (child.type === DropdownToggle) {
+        return React.cloneElement(child, {
+          handleToggle,
+        })
+      }
+      return child
+    })
     return (
-      <li className={classNames('c-navbar__item', { 'is-open': this.state.isOpen })}>
-        <button className="c-navbar__dropdown-toggle" onClick={this.handleToggle}>
-          Dropdown
-        </button>
-        <ul className="c-navbar__dropdown">
-          <li className="c-navbar__item">
-            <a href="" className="c-navbar__link">Dropwn item</a>
-          </li>
-          <li className="c-navbar__item">
-            <a href="" className="c-navbar__link">Dropdown item</a>
-          </li>
-        </ul>
+      <li
+        className={classNames('c-navbar__item', className, { 'is-open': isOpen })}
+        ref={(node) => { this.wrapperRef = node }}
+      >
+        {enhancedChildren}
       </li>
     )
   }
+}
+
+Dropdown.propTypes = {
+  className: T.string,
+  children: T.node.isRequired,
 }
 
 export default Dropdown
