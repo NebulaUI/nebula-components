@@ -1,0 +1,59 @@
+@if $nb-use-tabs {
+  .#{$nb-namespace}c-tabs-container {
+    display: flex;
+  }
+
+  .#{$nb-namespace}c-tab__list {
+    display: flex;
+  }
+
+  .#{$nb-namespace}c-tabs {
+    background-color: $nb-tabs-background;
+  }
+
+  .#{$nb-namespace}c-tab {
+    padding: $nb-tab-padding;
+    color: $nb-tab-color;
+    background-color: $nb-tab-background;
+
+    &:hover {
+      outline: none;
+      background-color: darken($nb-color-grey-v-light, 5%);
+      transition: $nb-tab-transition;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .#{$nb-namespace}c-tab[disabled] {
+    cursor: not-allowed;
+    color: $nb-tab-color-disabled;
+    background-color: $nb-tab-background-disabled;
+  }
+
+  .#{$nb-namespace}c-tab.is-active {
+    position: relative;
+    color: $nb-tab-color-active;
+    background-color: $nb-tab-background-active;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      content: ' ';
+      border-top: $nb-tab-border-active;
+    }
+
+    &:hover {
+      transition: $nb-tab-transition-active;
+    }
+  }
+
+  .#{$nb-namespace}c-tab__panel {
+    background: $nb-color-white;
+    padding: $nb-panel-padding;
+  }
+}

@@ -1,10 +1,12 @@
 import React from 'react'
+import T from 'prop-types'
+import classNames from 'classnames'
 
 import TabList from './TabList'
-import TabPanel from './TabPanel'
+import Tabs from './Tabs'
 import Tab from './Tab'
 import TabPanels from './TabPanels'
-import Tabs from './Tabs'
+import TabPanel from './TabPanel'
 
 const animals = [
   {
@@ -29,12 +31,12 @@ const animals = [
   },
 ]
 
-const MyTabs = () => (
+const MyTabs = ({ className }) => (
   <section className="o-section-md">
     <div className="o-site-wrap o-site-wrap--padding">
       <h4>Tabs</h4>
       <div className="o-grid o-grid--gutter-md o-grid--matrix">
-        <div className="o-grid__item">
+        <div className={classNames('o-grid__item u-1/2@sm c-tabs-container', className)}>
           <Tabs>
             <TabList>
               {animals.map(({ disabled, name }) =>
@@ -50,5 +52,9 @@ const MyTabs = () => (
     </div>
   </section>
 )
+
+MyTabs.propTypes = {
+  className: T.string,
+}
 
 export default MyTabs
