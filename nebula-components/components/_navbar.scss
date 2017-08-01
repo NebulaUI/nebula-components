@@ -5,6 +5,7 @@ $nb-navbar-sticky: true !default;
 $nb-navbar-background-color: $nb-color-white !default;
 $nb-navbar-toggle-color: $nb-color-black !default;
 $nb-navbar-toggle-background: $nb-color-white !default;
+$nb-navbar-collapsed-width: 350px !default;
 
 .#{$nb-namespace}c-navbar {
   @if $nb-navbar-sticky {
@@ -99,7 +100,7 @@ $nb-navbar-toggle-background: $nb-color-white !default;
     position: absolute;
     top: calc(100% + 1px);
     left: 0;
-    width: 500px;
+    width: $nb-navbar-collapsed-width;
     background: $nb-color-white;
     transform: translateX(-100%);
 
@@ -218,6 +219,7 @@ $nb-navbar-toggle-background: $nb-color-white !default;
     height: 2rem;
     vertical-align: middle;
     display: inline-block;
+    backface-visibility: hidden;
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -284,9 +286,9 @@ $burger-height: 3px;
   }
 }
 
-.#{$nb-namespace}c-navbar__toggle span,
-.#{$nb-namespace}c-navbar__toggle span::before,
-.#{$nb-namespace}c-navbar__toggle span::after {
+.#{$nb-namespace}c-navbar__toggle-bars,
+.#{$nb-namespace}c-navbar__toggle-bars::before,
+.#{$nb-namespace}c-navbar__toggle-bars::after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -299,15 +301,15 @@ $burger-height: 3px;
   content: ' ';
 }
 
-.#{$nb-namespace}c-navbar__toggle span::before {
+.#{$nb-namespace}c-navbar__toggle-bars::before {
   transform: translateY(-($burger-height * 2));
 }
 
-.#{$nb-namespace}c-navbar__toggle span::after {
+.#{$nb-namespace}c-navbar__toggle-bars::after {
   transform: translateY(($burger-height * 2));
 }
 
-.#{$nb-namespace}c-navbar.is-open .#{$nb-namespace}c-navbar__toggle span {
+.#{$nb-namespace}c-navbar.is-open .#{$nb-namespace}c-navbar__toggle-bars {
   $rotation: 45deg;
   transform: rotate(-$rotation);
   background: transparent;
