@@ -20,14 +20,14 @@ class Dropdown extends Component {
     return (
       <li className={classNames('c-navbar__item', { 'is-open': this.state.isOpen })}>
         <button className="c-navbar__dropdown-toggle" onClick={this.handleToggle}>
-          Dropdown
+          Galaxies
         </button>
         <ul className="c-navbar__dropdown">
           <li className="c-navbar__item">
-            <a href="" className="c-navbar__link">Dropwn item</a>
+            <a href="" className="c-navbar__link">Milky Way</a>
           </li>
           <li className="c-navbar__item">
-            <a href="" className="c-navbar__link">Dropdown item</a>
+            <a href="" className="c-navbar__link">Andromeda</a>
           </li>
         </ul>
       </li>

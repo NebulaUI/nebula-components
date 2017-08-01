@@ -31,20 +31,18 @@ class Navbar extends Component {
           </a>
           <ul className="c-navbar__nav">
             <li className="c-navbar__item">
-              <a href="" className="c-navbar__link">Link</a>
+              <a href="" className="c-navbar__link">Space Time</a>
             </li>
             <Dropdown />
             <li className="c-navbar__item">
-              <a href="" className="c-navbar__link">Link</a>
+              <a href="" className="c-navbar__link">Pulsars</a>
+            </li>
+            <Dropdown />
+            <li className="c-navbar__item">
+              <a href="" className="c-navbar__link is-active">Black holes</a>
             </li>
             <li className="c-navbar__item">
-              <a href="" className="c-navbar__link is-active">Link</a>
-            </li>
-            <li className="c-navbar__item">
-              <a href="" className="c-navbar__link">Link</a>
-            </li>
-            <li className="c-navbar__item">
-              <a href="" className="c-navbar__link">Link</a>
+              <a href="" className="c-navbar__link">Supernovas</a>
             </li>
           </ul>
         </nav>
