@@ -156,8 +156,8 @@ $nb-navbar-collapsed-width: 350px !default;
     bottom: 0;
     left: 0;
     top: 0;
-    width: ($nb-spacing-unit / 3);
-    background-color: $nb-color-alpha;
+    width: $nb-active-border-width;
+    background-color: $nb-active-border-color;
     transform: scale(0, 1);
     transform-origin: 0 100%;
     content: ' ';
@@ -184,7 +184,7 @@ $nb-navbar-collapsed-width: 350px !default;
   @include nb-respond-to($nb-nav-bp-key) {
     &::before {
       width: 100%;
-      height: ($nb-spacing-unit / 3);
+      height: $nb-active-border-width;
       top: auto;
       bottom: 0;
       transform: scale(1, 0);

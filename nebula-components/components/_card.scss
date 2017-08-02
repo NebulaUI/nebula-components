@@ -7,7 +7,7 @@
 @if $nb-use-status-card {
   .#{$nb-namespace}c-status-card {
     @include nb-card;
-    border-left-width: $nb-card-status-border-width;
+    border-left-width: $nb-active-border-width;
     border-style: solid;
   }
 
