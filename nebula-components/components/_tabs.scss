@@ -1,0 +1,107 @@
+@if $nb-use-tabs {
+  .#{$nb-namespace}c-tabs__tab {
+    position: relative;
+    padding: $nb-tab-padding;
+    color: $nb-tab-color;
+    background-color: $nb-tabs-background;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+
+    &:hover {
+      outline: none;
+
+      &::before {
+        opacity: 0.65;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      content: ' ';
+    }
+
+    &::before {
+      top: 0;
+      content: ' ';
+      border-top: $nb-tab-border-active;
+    }
+
+    &::after {
+      top: 100%;
+      height: 1px;
+      background-color: $nb-color-white;
+    }
+
+    &:first-child,
+    &:last-child {
+      z-index: 2;
+    }
+  }
+
+  .#{$nb-namespace}c-tabs__list {
+    overflow-x: auto;
+    padding-bottom: 1px; // overflow hack #1
+    white-space: nowrap;
+  }
+
+  .#{$nb-namespace}c-tabs__list-wrapper {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 50px;
+      pointer-events: none;
+      content: ' ';
+    }
+
+    &::before {
+      left: 0;
+      background-image: linear-gradient(to right, $nb-color-site-background, transparent);
+    }
+
+    &::after {
+      right: 0;
+      background-image: linear-gradient(to left, $nb-color-site-background, transparent);
+    }
+  }
+
+  .#{$nb-namespace}c-tabs__tab[disabled] {
+    cursor: not-allowed;
+    color: $nb-tab-color-disabled;
+    background-color: $nb-tab-background-disabled;
+  }
+
+  .#{$nb-namespace}c-tabs__tab.is-active {
+    color: $nb-tab-color-active;
+    background-color: $nb-tab-background-active;
+    border-style: solid;
+    border-color: $nb-color-base-border;
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .#{$nb-namespace}c-tabs__panels {
+    margin-top: -1px; //overflow hack #1
+  }
+
+  .#{$nb-namespace}c-tabs__panel {
+    @include nb-card;
+  }
+}

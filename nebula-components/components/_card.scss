@@ -7,24 +7,24 @@
 @if $nb-use-status-card {
   .#{$nb-namespace}c-status-card {
     @include nb-card;
-    border-width: 0 0 0 $nb-card-status-border-width;
+    border-left-width: $nb-active-border-width;
     border-style: solid;
   }
 
   .#{$nb-namespace}c-status-card--success {
-    border-color: $nb-card-status-color-success;
+    border-left-color: $nb-card-status-color-success;
   }
 
   .#{$nb-namespace}c-status-card--info {
-    border-color: $nb-card-status-color-info;
+    border-left-color: $nb-card-status-color-info;
   }
 
   .#{$nb-namespace}c-status-card--warning {
-    border-color: $nb-card-status-color-warning;
+    border-left-color: $nb-card-status-color-warning;
   }
 
   .#{$nb-namespace}c-status-card--error {
-    border-color: $nb-card-status-color-error;
+    border-left-color: $nb-card-status-color-error;
   }
 }
 
