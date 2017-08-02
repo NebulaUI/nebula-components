@@ -8,6 +8,7 @@ import Cards from './Components/Cards'
 import StatusCards from './Components/Cards/StatusCards'
 import Flyouts from './Components/Flyouts'
 import Tabs from './Components/Tabs'
+import Modals from './Components/Modals'
 
 const App = () => (
   <div>
@@ -23,6 +24,7 @@ const App = () => (
       <StatusCards />
       <Flyouts />
       <Tabs />
+      <Modals />
     </section>
   </div>
 )
