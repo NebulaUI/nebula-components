@@ -1,9 +1,6 @@
 @if $nb-use-modals {
-  .#{$nb-namespace}c-modals {
-
-  }
   .#{$nb-namespace}c-modals__overlay {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     display: block;
@@ -15,9 +12,21 @@
     content: ' ';
   }
 
-  .#{$nb-namespace}c-modals.is-open .#{$nb-namespace}c-modals {
+  .#{$nb-namespace}c-modals.is-open .#{$nb-namespace}c-modals__overlay {
     transform: translate3d(0, 0, 0);
     opacity: 1;
     transition: opacity $nb-transition-duration;
+  }
+
+  .#{$nb-namespace}c-modals .c-card {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    transform: scale(0);
+  }
+
+  .#{$nb-namespace}c-modals.is-open .c-card {
+    transform: translate(-50%, -50%) scale(1);
   }
 }
