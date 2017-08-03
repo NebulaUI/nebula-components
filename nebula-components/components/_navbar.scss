@@ -7,6 +7,12 @@ $nb-navbar-toggle-color: $nb-color-black !default;
 $nb-navbar-toggle-background: $nb-color-white !default;
 $nb-navbar-collapsed-width: 350px !default;
 
+@if $nb-navbar-sticky {
+  .#{$nb-namespace}o-site-wrap--padding-top {
+    padding-top: $nb-navbar-height; // <= TODO
+  }
+}
+
 .#{$nb-namespace}c-navbar {
   @if $nb-navbar-sticky {
     position: fixed;

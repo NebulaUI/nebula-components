@@ -41,7 +41,7 @@ class App extends Component {
         <ModalExample isOpen={isModalOpen} close={this.closeModal} open={this.openModal} />
         <Navbar />
         <section className="o-section-md" id="main-content">
-          <div className="o-site-wrap o-site-wrap--padding">
+          <div className="o-site-wrap o-site-wrap--padding o-site-wrap--padding-top">
             <h1>Nebula Components</h1>
           </div>
           <Typography />
