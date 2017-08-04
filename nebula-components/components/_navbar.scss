@@ -6,13 +6,6 @@ $nb-navbar-background-color: $nb-color-white !default;
 $nb-navbar-toggle-color: $nb-color-black !default;
 $nb-navbar-toggle-background: $nb-color-white !default;
 $nb-navbar-collapsed-width: 350px !default;
-$nb-content-padding-top-sticky: $nb-navbar-height !default;
-
-@if $nb-navbar-sticky {
-  .#{$nb-namespace}c-site-content--padding-top {
-    padding-top: $nb-content-padding-top-sticky;
-  }
-}
 
 .#{$nb-namespace}c-navbar {
   @if $nb-navbar-sticky {
