@@ -8,7 +8,7 @@ const Modal = ({ isOpen, close, children }) => (
     <button className="c-modal__overlay" onClick={close} />
     <div className="c-modal__body">
       <div className="c-modal__content">
-        <button className="c-modal__dismiss" onClick={close}>X</button>
+        <button title="Close" className="c-modal__dismiss c-btn--sm" onClick={close} />
         {children}
       </div>
     </div>
@@ -16,9 +16,9 @@ const Modal = ({ isOpen, close, children }) => (
 )
 
 Modal.propTypes = {
+  children: T.node,
   isOpen: T.bool,
   close: T.func,
-  children: T.string,
 }
 
 export default Modal

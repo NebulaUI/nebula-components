@@ -10,6 +10,7 @@ import Flyouts from './Components/Flyouts'
 import Tabs from './Components/Tabs'
 import ModalExample from './Components/Modal/Example'
 import OpenModal from './Components/Modal/Open'
+import SiteContent from './Components/SiteContent'
 
 class App extends Component {
   constructor() {
@@ -40,7 +41,8 @@ class App extends Component {
       <div>
         <ModalExample isOpen={isModalOpen} close={this.closeModal} open={this.openModal} />
         <Navbar />
-        <section className="o-section-md" id="main-content">
+        <section id="main-content">
+          <SiteContent />
           <div className="o-site-wrap o-site-wrap--padding">
             <h1>Nebula Components</h1>
           </div>
