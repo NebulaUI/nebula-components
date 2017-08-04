@@ -1,15 +1,16 @@
 $nb-navbar-item-spacing: $nb-spacing-unit !default;
 $nb-navbar-height: 60px !default;
 $nb-navbar-height-collapsed: 50px !default;
-$nb-navbar-sticky: true !default;
+$nb-navbar-sticky: false !default;
 $nb-navbar-background-color: $nb-color-white !default;
 $nb-navbar-toggle-color: $nb-color-black !default;
 $nb-navbar-toggle-background: $nb-color-white !default;
 $nb-navbar-collapsed-width: 350px !default;
+$nb-content-padding-top-sticky: $nb-navbar-height !default;
 
 @if $nb-navbar-sticky {
-  .#{$nb-namespace}o-site-wrap--padding-top {
-    padding-top: $nb-navbar-height; // <= TODO
+  .#{$nb-namespace}c-site-content--padding-top {
+    padding-top: $nb-content-padding-top-sticky;
   }
 }
 
