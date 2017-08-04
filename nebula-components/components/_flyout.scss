@@ -21,7 +21,7 @@
     left: 0;
 
     &::after {
-      left: $nb-flyout-triangle-positioning;
+      left: $nb-spacing-unit;
       @include nb-triangle(down);
     }
   }
@@ -31,7 +31,7 @@
     left: 0;
 
     &::after {
-      left: $nb-flyout-triangle-positioning;
+      left: $nb-spacing-unit;
       @include nb-triangle(up);
     }
   }
@@ -41,7 +41,7 @@
     right: 0%;
 
     &::after {
-      right: $nb-flyout-triangle-positioning;
+      right: $nb-spacing-unit;
       @include nb-triangle(up);
     }
   }
@@ -51,7 +51,7 @@
     right: 0%;
 
     &::after {
-      right: $nb-flyout-triangle-positioning;
+      right: $nb-spacing-unit;
       @include nb-triangle(down);
     }
   }
