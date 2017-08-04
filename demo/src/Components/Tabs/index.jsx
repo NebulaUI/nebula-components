@@ -8,40 +8,41 @@ import Panel from './Panel'
 
 const animals = [
   {
-    name: 'Cats',
-    description: 'A domestic and lazy animal',
-  }, {
-    name: 'Dogs',
-    description: 'Likes eating bones',
+    name: 'Tab 1',
+    description: 'Tab 1 content',
   },
   {
-    name: 'Fish',
-    description: 'Likes swimming',
+    name: 'Tab 2',
+    description: 'Tab 2 content',
+  },
+  {
+    name: 'Tab 3',
+    description: 'Tab 3 content',
     // disabled: true,
   },
   {
-    name: 'Spider',
-    description: 'Likes eating flies',
+    name: 'Tab 4',
+    description: 'Tab 4 content',
   },
   {
-    name: 'Horse',
-    description: 'Likes eating flies',
+    name: 'Tab 5',
+    description: 'Tab 5 content',
   },
   {
-    name: 'Pig',
-    description: 'Likes eating flies',
+    name: 'Tab 6',
+    description: 'Tab 6 content',
   },
   {
-    name: 'Elephant',
-    description: 'Likes eating flies',
+    name: 'Tab 7',
+    description: 'Tab 7 content',
   },
   {
-    name: 'Giraffe',
-    description: 'Likes eating flies',
+    name: 'Tab 8',
+    description: 'Tab 8 content',
   },
   {
-    name: 'Hippo',
-    description: 'Likes eating flies',
+    name: 'Tab 9',
+    description: 'Tab 9 content',
   },
 ]
 
