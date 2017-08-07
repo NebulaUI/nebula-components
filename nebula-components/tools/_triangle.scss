@@ -1,26 +1,16 @@
-@mixin nb-triangle(
-  $direction,
-  $color: $nb-color-white,
-  $transform: rotate(-45deg),
-  $size: ($nb-spacing-unit / 2),
-  $box-shadow-color: $nb-color-grey-light) {
+@mixin nb-triangle($direction, $color: $nb-color-white, $transform: rotate(-45deg), $size: $nb-spacing-unit-half) {
   content: '';
   display: block;
   position: absolute;
-  height: 0;
-  width: 0;
-  transform-origin: 0 0;
   transform: #{$transform};
   border-width: $size;
   border-style: solid;
   @if ($direction == up) {
-    bottom: 96.75%;
-    box-shadow: 1px -1px 0 $box-shadow-color;
+    box-shadow: 1px -1px 0 $nb-color-base-border;
     border-color: $color $color transparent transparent;
   }
   @else if ($direction == down) {
-    top: 99.75%;
-    box-shadow: -1px 1px 0 $box-shadow-color;
+    box-shadow: -1px 1px 0 $nb-color-base-border;
     border-color: transparent transparent $color $color;
   }
 }

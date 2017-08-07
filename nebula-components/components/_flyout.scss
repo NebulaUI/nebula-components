@@ -21,6 +21,7 @@
     left: 0;
 
     &::after {
+      bottom: -($nb-spacing-unit / 10 * 3.5);
       left: $nb-spacing-unit;
       @include nb-triangle(down);
     }
@@ -31,6 +32,7 @@
     left: 0;
 
     &::after {
+      top: -($nb-spacing-unit / 10 * 3.5);
       left: $nb-spacing-unit;
       @include nb-triangle(up);
     }
@@ -41,6 +43,7 @@
     right: 0%;
 
     &::after {
+      top: -($nb-spacing-unit / 10 * 3.5);
       right: $nb-spacing-unit;
       @include nb-triangle(up);
     }
@@ -51,6 +54,7 @@
     right: 0%;
 
     &::after {
+      bottom: -($nb-spacing-unit / 10 * 3.5);
       right: $nb-spacing-unit;
       @include nb-triangle(down);
     }
