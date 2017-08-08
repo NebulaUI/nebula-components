@@ -133,6 +133,7 @@
       right: 100%;
       top: 0;
       bottom: 0;
+      z-index: 1;
       width: ($nb-navbar-item-spacing / 2);
       background-color: $nb-navbar-background-color;
       content: ' ';
@@ -152,9 +153,9 @@
 
   &::before {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    top: 0;
+    bottom: ($nb-navbar-item-spacing / 2);
+    left: -1px;
+    top: ($nb-navbar-item-spacing / 2);
     width: $nb-active-border-width;
     background-color: $nb-active-border-color;
     transform: scale(0, 1);
@@ -186,6 +187,7 @@
       height: $nb-active-border-width;
       top: auto;
       bottom: 0;
+      left: 0;
       transform: scale(1, 0);
     }
 
@@ -254,6 +256,7 @@
     border-width: 0;
     border-style: solid;
     border-color: $nb-color-base-border;
+    opacity: 0;
     transform: translateY(-100%);
   }
 
@@ -265,7 +268,8 @@
 
 .#{$nb-namespace}c-navbar__dropdown-toggle.is-open + .#{$nb-namespace}c-navbar__dropdown {
   transform: translateY(0);
-  transition: transform $nb-transition-duration;
+  opacity: 1;
+  transition: transform $nb-transition-duration, opacity $nb-transition-duration;
   border-width: 0 1px 1px;
 
   @include nb-respond-to('max-#{$nb-nav-bp-key}') {
