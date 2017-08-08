@@ -1,14 +1,15 @@
 .#{$nb-namespace}c-navbar {
-  @if $nb-navbar-sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 4;
-  } @else {
-    position: relative;
-  }
+  position: relative;
+  z-index: 1;
+  height: $nb-navbar-height-collapsed;
+  background-color: $nb-navbar-background-color;
 
+  @include nb-respond-to($nb-nav-bp-key) {
+    height: $nb-navbar-height;
+  }
+}
+
+.#{$nb-namespace}c-navbar__inner {
   height: $nb-navbar-height-collapsed;
   line-height: $nb-navbar-height-collapsed;
   background-color: $nb-navbar-background-color;
@@ -28,6 +29,13 @@
     background-color: $nb-color-base-border;
     clear: both;
     content: ' ';
+  }
+
+  &.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -223,11 +231,12 @@
   }
 }
 
-.#{$nb-namespace}c-navbar__item.is-open > .#{$nb-namespace}c-navbar__dropdown-toggle::after {
+.#{$nb-namespace}c-navbar__dropdown-toggle.is-open::after {
   transform: rotate(180deg);
 }
 
 .#{$nb-namespace}c-navbar__dropdown {
+  min-width: 150px;
   margin: 0;
   list-style: none;
   white-space: nowrap;
@@ -249,7 +258,7 @@
   }
 }
 
-.#{$nb-namespace}c-navbar__item.is-open > .#{$nb-namespace}c-navbar__dropdown {
+.#{$nb-namespace}c-navbar__dropdown-toggle.is-open + .#{$nb-namespace}c-navbar__dropdown {
   transform: translateY(0);
   transition: transform $nb-transition-duration;
   border-width: 0 1px 1px;
