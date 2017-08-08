@@ -213,6 +213,11 @@
   text-align: left;
   z-index: 1;
 
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
   &::after {
     width: 2rem;
     height: 2rem;
