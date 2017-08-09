@@ -1,4 +1,9 @@
 @if $nb-use-tabs {
+  .#{$nb-namespace}c-tabs {
+    position: relative;
+    z-index: 0;
+  }
+
   .#{$nb-namespace}c-tabs__tab {
     position: relative;
     padding: $nb-tab-padding;
