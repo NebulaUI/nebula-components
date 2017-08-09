@@ -9,9 +9,7 @@ const Flyout = ({ isOpen, id, handleClick }) => (
       <div className={`c-flyout__content c-flyout__content--${id.toLowerCase()}`}>
         <div className="c-card">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Aspernatur culpa ex explicabo illo inventore laboriosam neque,
-          nihil omnis ratione ullam. Error ex, excepturi incidunt ipsum iure libero
-          maiores quidem voluptates.
+          Aspernatur culpa ex explicabo.
         </div>
       </div>
     </div>

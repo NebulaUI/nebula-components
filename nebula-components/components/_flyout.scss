@@ -21,8 +21,6 @@
     left: 0;
 
     &::after {
-      bottom: -($nb-spacing-unit / 10 * 3.5);
-      left: $nb-spacing-unit;
       @include nb-triangle(down);
     }
   }
@@ -32,31 +30,25 @@
     left: 0;
 
     &::after {
-      top: -($nb-spacing-unit / 10 * 3.5);
-      left: $nb-spacing-unit;
       @include nb-triangle(up);
     }
   }
 
   .#{$nb-namespace}c-flyout__content--sw {
     top: calc(100% + #{$nb-spacing-unit-half});
-    right: 0%;
+    right: 0;
 
     &::after {
-      top: -($nb-spacing-unit / 10 * 3.5);
-      right: $nb-spacing-unit;
-      @include nb-triangle(up);
+      @include nb-triangle(left);
     }
   }
 
   .#{$nb-namespace}c-flyout__content--nw {
     bottom: calc(100% + #{$nb-spacing-unit-half});
-    right: 0%;
+    left: 0;
 
     &::after {
-      bottom: -($nb-spacing-unit / 10 * 3.5);
-      right: $nb-spacing-unit;
-      @include nb-triangle(down);
+      @include nb-triangle(right);
     }
   }
 }
