@@ -79,7 +79,7 @@
 }
 
 .#{$nb-namespace}c-navbar__logo {
-  display: block;
+  display: inline-block;
   color: inherit;
   font-weight: bold;
   text-decoration: none;
@@ -98,7 +98,9 @@
     padding-left: $nb-navbar-item-spacing;
     float: left;
   }
+}
 
+.#{$nb-namespace}c-navbar__content:not(.#{$nb-namespace}c-navbar__content--keep-at-top) {
   @include nb-respond-to('max-#{$nb-nav-bp-key}') {
     width: $nb-navbar-collapsed-width;
     background: $nb-color-white;
@@ -115,13 +117,19 @@
       content: ' ';
     }
   }
+
+}
+
+.#{$nb-namespace}c-navbar__content--keep-at-top {
+  @include nb-respond-to('max-#{$nb-nav-bp-key}') {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .#{$nb-namespace}c-navbar__content + .#{$nb-namespace}c-navbar__content {
   @include nb-respond-to('max-#{$nb-nav-bp-key}') {
-    position: relative;
-    z-index: 1;
-
     &::before {
       display: none;
     }
