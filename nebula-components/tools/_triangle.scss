@@ -32,7 +32,7 @@
     box-shadow: -1px 1px 0 $nb-color-base-border;
     border-color: transparent transparent $color $color;
     bottom: #{$position};
-    left: $nb-spacing-unit;
+    right: $nb-spacing-unit;
   }
 }
 

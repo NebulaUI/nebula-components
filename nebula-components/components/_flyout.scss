@@ -45,7 +45,7 @@
 
   .#{$nb-namespace}c-flyout__content--nw {
     bottom: calc(100% + #{$nb-spacing-unit-half});
-    left: 0;
+    right: 0;
 
     &::after {
       @include nb-triangle(right);
