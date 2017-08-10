@@ -1,32 +1,38 @@
-@mixin nb-triangle($direction, $size: $nb-flyout-triangle-size, $color: $nb-flyout-triangle-color) {
+@mixin nb-triangle(
+  $direction,
+  $color: $nb-color-white,
+  $transform: rotate(-45deg),
+  $size: $nb-spacing-unit-half,
+  $position: -0.35rem) {
   content: '';
   display: block;
   position: absolute;
-  height: 0;
-  width: 0;
+  transform: #{$transform};
+  border-width: $size;
+  border-style: solid;
   @if ($direction == up) {
-    bottom: 100%;
-    border-bottom: $size solid $color;
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
+    box-shadow: 1px -1px $nb-color-base-border;
+    border-color: $color $color transparent transparent;
+    top: #{$position};
+    left: $nb-spacing-unit;
   }
   @else if ($direction == down) {
-    top: 100%;
-    border-top: $size solid $color;
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
+    box-shadow: -1px 1px 0 $nb-color-base-border;
+    border-color: transparent transparent $color $color;
+    bottom: #{$position};
+    left: $nb-spacing-unit;
   }
   @else if ($direction == left) {
-    right: 100%;
-    border-top: $size solid transparent;
-    border-bottom: $size solid transparent;
-    border-right: $size solid $color;
+    box-shadow: 1px -1px 0 $nb-color-base-border;
+    border-color: $color $color transparent transparent;
+    top: #{$position};
+    right: $nb-spacing-unit;
   }
   @else if ($direction == right) {
-    left: 100%;
-    border-top: $size solid transparent;
-    border-bottom: $size solid transparent;
-    border-left: $size solid $color;
+    box-shadow: -1px 1px 0 $nb-color-base-border;
+    border-color: transparent transparent $color $color;
+    bottom: #{$position};
+    right: $nb-spacing-unit;
   }
 }
 
