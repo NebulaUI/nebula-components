@@ -232,6 +232,9 @@
 
 :not(.#{$nb-namespace}c-navbar__dropdown) > .#{$nb-namespace}c-navbar__item > .#{$nb-namespace}c-navbar__link,
 :not(.#{$nb-namespace}c-navbar__dropdown) > .#{$nb-namespace}c-navbar__item > .#{$nb-namespace}c-navbar__dropdown-toggle {
+  position: relative;
+  z-index: 1;
+
   @include nb-respond-to($nb-nav-bp-key) {
     &::before {
       width: 100%;
@@ -297,7 +300,6 @@
 
   @include nb-respond-to($nb-nav-bp-key) {
     position: absolute;
-    left: 0;
     top: 100%;
     z-index: 0;
     border-width: 0;
@@ -310,6 +312,18 @@
   @include nb-respond-to('max-#{$nb-nav-bp-key}') {
     display: none;
     text-indent: $nb-spacing-unit;
+  }
+}
+
+.#{$nb-namespace}c-navbar__dropdown:not(.#{$nb-namespace}c-navbar__dropdown--south-west) {
+  @include nb-respond-to($nb-nav-bp-key) {
+    left: 0;
+  }
+}
+
+.#{$nb-namespace}c-navbar__dropdown--south-west {
+  @include nb-respond-to($nb-nav-bp-key) {
+    right: 0;
   }
 }
 
