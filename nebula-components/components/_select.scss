@@ -30,6 +30,7 @@
 
     &.#{$nb-namespace}c-select--sm {
       padding: $nb-select-padding-sm;
+      padding-right: 3rem;
       background-size: auto 1.2rem;
     }
   }
