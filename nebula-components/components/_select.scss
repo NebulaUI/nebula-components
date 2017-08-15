@@ -27,5 +27,10 @@
       cursor: not-allowed;
       background-color: $nb-color-background-disabled;
     }
+
+    &.#{$nb-namespace}c-select--sm {
+      padding: $nb-select-padding-sm;
+      background-size: auto 1.2rem;
+    }
   }
 }
