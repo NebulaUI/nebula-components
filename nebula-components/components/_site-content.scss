@@ -1,8 +1,0 @@
-.#{$nb-namespace}c-site-content {
-  @if $nb-navbar-sticky {
-    padding-top: $nb-navbar-height-collapsed;
-    @include nb-respond-to($nb-nav-bp-key) {
-      padding-top: $nb-navbar-height;
-    }
-  }
-}

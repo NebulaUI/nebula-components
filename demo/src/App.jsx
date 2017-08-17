@@ -52,8 +52,9 @@ class App extends Component {
           <Cards />
           <StatusCards />
           <Flyouts />
-          <Tabs />
           <OpenModal open={this.openModal} />
+          <Tabs />
+
         </section>
       </div>
     )
