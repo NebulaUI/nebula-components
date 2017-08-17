@@ -1,0 +1,19 @@
+@if $use-nb-icon {
+  $icon-size: 1em;
+
+  .#{$nb-namespace}c-icon {
+    display: inline-block;
+    width: $icon-size;
+    height: $icon-size;
+    vertical-align: middle;
+    fill: currentColor;
+  }
+
+  .#{$nb-namespace}c-icon--left {
+    margin-right: $nb-spacing-unit-half;
+  }
+
+  .#{$nb-namespace}c-icon--right {
+    margin-left: $nb-spacing-unit-half;
+  }
+}
