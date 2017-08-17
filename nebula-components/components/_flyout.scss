@@ -16,6 +16,10 @@
     transform: scale(0);
   }
 
+  .#{$nb-namespace}c-flyout__toggle {
+    background-color: transparent;
+  }
+
   .#{$nb-namespace}c-flyout__content--ne {
     bottom: calc(100% + #{$nb-spacing-unit-half});
     left: 0;
