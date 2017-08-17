@@ -1,0 +1,77 @@
+@mixin build-foldable-segments {
+  > .c-foldable__head {
+    padding-top: $nb-spacing-unit;
+    padding-bottom: $nb-spacing-unit;
+  }
+
+  > .c-foldable__head > .c-foldable__title {
+    margin-bottom: 0;
+    padding-right: $nb-spacing-unit-double;
+  }
+
+  > .c-foldable__head > .c-foldable__toggle {
+    display: block;
+  }
+
+  > .c-foldable__body {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.c-foldable--bordered:first-child {
+  border-top: 1px solid $nb-color-base-border;
+}
+
+.c-foldable--bordered {
+  border-bottom: 1px solid $nb-color-base-border;
+}
+
+.c-foldable--bordered .c-foldable__head {
+  padding-top: $nb-spacing-unit;
+}
+
+.c-foldable__head {
+  position: relative;
+}
+
+.c-foldable__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  background: transparent;
+}
+
+.c-foldable__chevron {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: rotate(0) translateY(-50%);
+}
+
+.c-foldable:not([class*='c-foldable@']) {
+  @include build-foldable-segments;
+}
+
+@each $key, $value in $nb-breakpoints {
+  .c-foldable\@max-#{$key} {
+    @include nb-respond-to('max-#{$key}') {
+      @include build-foldable-segments;
+    }
+  }
+}
+
+[class*='c-foldable'].is-open > .c-foldable__body {
+  height: auto;
+  overflow: visible;
+}
+
+// reason: Requires the high-specificity selector below to allow nesting of foldable components.
+// stylelint-disable-next-line
+[class*='c-foldable'].is-open > .c-foldable__head > .c-foldable__toggle > .c-foldable__chevron {
+  transform: rotate(180deg) translateY(50%);
+}
