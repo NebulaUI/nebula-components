@@ -2,7 +2,7 @@
   "name": "nebula-components",
   "version": "0.1.1",
   "description": "Building on top of Nebula CSS a series of common components",
-  "main": "index.js",
+  "repository": "https://github.com/rbrtsmith/nebula-components",
   "scripts": {
     "lint:scss": "stylelint '*/**/*.scss' --syntax scss",
     "lint:js": "cd demo && npm run lint",
