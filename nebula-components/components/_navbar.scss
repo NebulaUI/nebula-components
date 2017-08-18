@@ -94,6 +94,10 @@
   }
 }
 
+.#{$nb-namespace}c-navbar__logo > img {
+  vertical-align: middle;
+}
+
 .#{$nb-namespace}c-navbar__content {
   margin: 0;
   padding: 0;
