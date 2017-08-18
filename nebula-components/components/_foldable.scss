@@ -1,18 +1,18 @@
 @mixin build-foldable-segments {
-  > .c-foldable__head {
+  > .c-foldable__header {
     padding-right: $nb-spacing-unit-double;
   }
 
-  > .c-foldable__head--padding {
+  > .c-foldable__header--padding {
     padding-top: $nb-spacing-unit;
     padding-bottom: $nb-spacing-unit;
   }
 
-  > .c-foldable__head > *:last-child {
+  > .c-foldable__header > *:last-child {
     margin-bottom: 0;
   }
 
-  > .c-foldable__head > .c-foldable__toggle {
+  > .c-foldable__header > .c-foldable__toggle {
     display: block;
     @include nb-input-icon(right, 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODUuMzQ0IiBoZWlnaHQ9IjE4NS4zNDQiIHZpZXdCb3g9IjAgMCAxODUuMzQ0IDE4NS4zNDQiPjxwYXRoIGZpbGw9IiMxNjE2MTYiIGQ9Ik05Mi42NzIgMTQ0LjM3M2MtMi43NTIgMC01LjQ5My0xLjA0NC03LjU5My0zLjEzOEwzLjE0NCA1OS4zYy00LjE5NC00LjE5OC00LjE5NC0xMC45OSAwLTE1LjE4IDQuMTk0LTQuMTk4IDEwLjk4Ny00LjE5OCAxNS4xOCAwbDc0LjM0NyA3NC4zNDIgNzQuMzQ3LTc0LjM0YzQuMTkzLTQuMiAxMC45ODYtNC4yIDE1LjE4IDAgNC4xOTMgNC4xOTMgNC4xOTMgMTAuOTggMCAxNS4xOGwtODEuOTQgODEuOTMzYy0yLjA5NCAyLjA5NC00Ljg0IDMuMTM4LTcuNTg4IDMuMTM4eiIvPjwvc3ZnPg==');
   }
@@ -31,11 +31,11 @@
   border-bottom: 1px solid $nb-color-base-border;
 }
 
-.c-foldable--bordered .c-foldable__head {
+.c-foldable--bordered .c-foldable__header {
   padding-top: $nb-spacing-unit;
 }
 
-.c-foldable__head {
+.c-foldable__header {
   position: relative;
 }
 
@@ -76,6 +76,6 @@
 
 // reason: Requires the high-specificity selector below to allow nesting of foldable components.
 // stylelint-disable-next-line
-[class*='c-foldable'].is-open > .c-foldable__head > .c-foldable__toggle {
+[class*='c-foldable'].is-open > .c-foldable__header > .c-foldable__toggle {
   transform: rotateX(180deg);
 }
