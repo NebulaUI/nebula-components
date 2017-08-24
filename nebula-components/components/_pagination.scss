@@ -1,0 +1,94 @@
+@if $nb-use-modal {
+  .#{$nb-namespace}c-pagination-list--center {
+    text-align: center;
+  }
+
+  .#{$nb-namespace}c-pagination-list--right {
+    text-align: right;
+  }
+
+  .#{$nb-namespace}c-pagination-list__link {
+    text-decoration: none;
+    padding: $nb-spacing-unit;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $nb-color-base-border;
+    background-color: $nb-color-white;
+    margin-right: $nb-spacing-unit-half;
+
+    &:hover,
+    &:focus {
+      border-color: $nb-active-border-color;
+    }
+  }
+
+  .#{$nb-namespace}c-pagination-list__item:first-child .#{$nb-namespace}c-pagination-list__link,
+  .#{$nb-namespace}c-pagination-list__item:last-child .#{$nb-namespace}c-pagination-list__link {
+    background: transparent;
+    border-color: transparent;
+
+    &::before,
+    &::after {
+      $size: 0.75rem;
+      width: $size;
+      height: $size;
+      content: ' ';
+      display: inline-block;
+      vertical-align: middle;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $nb-active-border-color;
+    }
+  }
+
+  .#{$nb-namespace}c-pagination-list__item:first-child .#{$nb-namespace}c-pagination-list__link {
+    &::before {
+      background-image: url('/src/img/chevron-double-alpha.svg');
+      margin-right: $nb-spacing-unit-half;
+    }
+  }
+
+  .#{$nb-namespace}c-pagination-list__item:last-child .#{$nb-namespace}c-pagination-list__link {
+    &::after {
+      background-image: url('/src/img/chevron-double-alpha.svg');
+      margin-left: $nb-spacing-unit-half;
+      transform: rotate(180deg);
+    }
+  }
+
+  .#{$nb-namespace}c-pagination-list__item:first-child .#{$nb-namespace}c-pagination-list__link[disabled] {
+    &::before {
+      background-image: url('/src/img/chevron-double-grey.svg');
+    }
+  }
+
+  .#{$nb-namespace}c-pagination-list__item:last-child .#{$nb-namespace}c-pagination-list__link[disabled] {
+    &::after {
+      background-image: url('/src/img/chevron-double-grey.svg');
+    }
+  }
+
+  .#{$nb-namespace}c-pagination-list__link[disabled] {
+    color: $nb-color-grey;
+    background: transparent;
+    cursor: not-allowed;
+    border: 0;
+  }
+
+  .#{$nb-namespace}c-pagination-list__link.is-active {
+    font-weight: bold;
+    background-color: $nb-color-alpha;
+    border-color: $nb-active-border-color;
+    color: $nb-color-white;
+  }
+
+  .#{$nb-namespace}c-pagination-list__link.c-pagination-list__link--more {
+    background-color: transparent;
+    border: 0;
+  }
+}
