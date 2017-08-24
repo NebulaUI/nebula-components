@@ -11,6 +11,7 @@ import Tabs from './Components/Tabs'
 import ModalExample from './Components/Modal/Example'
 import OpenModal from './Components/Modal/Open'
 import SiteContent from './Components/SiteContent'
+import Pagination from './Components/Pagination'
 
 class App extends Component {
   constructor() {
@@ -54,7 +55,7 @@ class App extends Component {
           <Flyouts />
           <OpenModal open={this.openModal} />
           <Tabs />
-
+          <Pagination />
         </section>
       </div>
     )
