@@ -1,62 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import T from 'prop-types'
 import classNames from 'classnames'
 
-class DropdownToggle extends Component {
-  constructor() {
-    super()
-    this.state = {
-      isOpen: false,
-    }
-  }
+const DropdownToggle = ({ handleToggle, children, className, to }) => (
+  <a href={to} className={classNames('c-btn c-btn--alpha c-btn--md c-btn--full', className)}>
+    { children }
+    <button className="c-btn-group__dropdown-toggle" onClick={handleToggle} />
+  </a>
+)
 
-  componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside)
-  }
-
-  handleToggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    })
-  }
-
-  handleClickOutside = (e) => {
-    if (!this.wrapperRef.contains(e.target)) {
-      this.setState({
-        isOpen: false,
-      })
-    }
-  }
-
-  render() {
-    const { handleToggle, state: { isOpen }, props: { children, className } } = this
-    const enhancedChildren = React.Children.map(children, (child) => {
-      if (child.type === DropdownToggle) {
-        return React.cloneElement(child, {
-          handleToggle,
-        })
-      }
-      return child
-    })
-    return (
-      <button
-        onClick={handleToggle}
-        className={classNames('c-btn c-btn--alpha c-btn--md c-btn-group__dropdown-toggle', className, { 'is-open': isOpen })}
-        aria-hidden="true"
-        tabIndex="-1"
-        ref={(node) => { this.wrapperRef = node }}
-      >
-        { enhancedChildren }
-      </button>
-    )
-  }
-}
 
 DropdownToggle.propTypes = {
+  to: T.string,
+  handleToggle: T.func,
   className: T.string,
   children: T.node.isRequired,
 }

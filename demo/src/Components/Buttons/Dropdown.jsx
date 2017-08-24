@@ -21,7 +21,8 @@ class Dropdown extends Component {
     document.removeEventListener('mousedown', this.handleClickOutside)
   }
 
-  handleToggle = () => {
+  handleToggle = (e) => {
+    e.preventDefault()
     this.setState({
       isOpen: !this.state.isOpen,
     })

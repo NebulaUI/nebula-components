@@ -19,47 +19,31 @@ const Btn = () => (
           <div>
             <strong>Beta</strong>
           </div>
-          <a
-            href=""
-            className="c-btn c-btn--beta c-btn--md"
-          >Place another bet</a>
+          <a href="" className="c-btn c-btn--beta c-btn--md">Place another bet</a>
         </li>
         <li className="o-bare-list__item">
           <div>
             <strong>Large</strong>
           </div>
-          <a
-            href=""
-            className="c-btn c-btn--alpha c-btn--lg"
-          >Place another bet</a>
+          <a href="" className="c-btn c-btn--alpha c-btn--lg">Place another bet</a>
         </li>
         <li className="o-bare-list__item">
           <div>
             <strong>Full width</strong>
           </div>
-          <button
-            href=""
-            className="c-btn c-btn--alpha c-btn--md c-btn--full"
-          >Place another bet</button>
+          <button href="" className="c-btn c-btn--alpha c-btn--md c-btn--full">Place another bet</button>
         </li>
         <li className="o-bare-list__item">
           <div>
             <strong>Small</strong>
           </div>
-          <a
-            href=""
-            className="c-btn c-btn--alpha c-btn--sm"
-          >Place another bet</a>
+          <a href="" className="c-btn c-btn--alpha c-btn--sm">Place another bet</a>
         </li>
         <li className="o-bare-list__item">
           <div>
             <strong>Disabled</strong>
           </div>
-          <button
-            href=""
-            className="c-btn c-btn--alpha c-btn--md"
-            disabled
-          >Place another bet</button>
+          <button href="" className="c-btn c-btn--alpha c-btn--md" disabled>Place another bet</button>
         </li>
         <li className="o-bare-list__item">
           <div>
@@ -68,25 +52,29 @@ const Btn = () => (
           <div className="o-grid o-grid--gutter-md o-grid--matrix">
             <div className="o-grid__item u-1/2">
               <Dropdown className="c-btn-group__dropdown-toggle--left">
-                <DropdownToggle>
-                  Place another bet
+                <DropdownToggle to="/">
+                  Click to go to link
                 </DropdownToggle>
                 <DropdownContent>
-                  <li>Option 1</li>
-                  <li>Option 2</li>
-                  <li>Option 3</li>
+                  <ul className="o-bare-list">
+                    <li className="o-bare-list__item">Option 1</li>
+                    <li className="o-bare-list__item">Option 2</li>
+                    <li className="o-bare-list__item">Option 3</li>
+                  </ul>
                 </DropdownContent>
               </Dropdown>
             </div>
             <div className="o-grid__item u-1/2">
               <Dropdown className="c-btn-group__dropdown-toggle--right">
-                <DropdownToggle>
-                  Place another bet
+                <DropdownToggle to="/">
+                  Click to go to link
                 </DropdownToggle>
                 <DropdownContent>
-                  <li>Option 1</li>
-                  <li>Option 2</li>
-                  <li>Option 3</li>
+                  <ul className="o-bare-list">
+                    <li className="o-bare-list__item">Option 1</li>
+                    <li className="o-bare-list__item">Option 2</li>
+                    <li className="o-bare-list__item">Option 3</li>
+                  </ul>
                 </DropdownContent>
               </Dropdown>
             </div>

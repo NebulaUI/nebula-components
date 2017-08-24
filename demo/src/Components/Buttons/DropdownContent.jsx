@@ -3,9 +3,9 @@ import T from 'prop-types'
 import classNames from 'classnames'
 
 const DropdownContent = ({ children, className }) => (
-  <ul className={classNames('o-bare-list c-btn-group__dropdown-menu', className)}>
+  <div className={classNames('c-btn-group__dropdown', className)}>
     { children }
-  </ul>
+  </div>
 )
 
 DropdownContent.propTypes = {
