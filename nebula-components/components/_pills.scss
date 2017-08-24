@@ -1,0 +1,79 @@
+@mixin pill-color($bg, $txt: $nb-color-white) {
+  color: $txt;
+  background-color: $bg;
+  transition: background-color $nb-transition-duration;
+
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
+    background-color: darken($bg, 10%);
+    color: $txt;
+  }
+}
+
+@if $nb-use-pills {
+  .#{$nb-namespace}c-pill {
+    background-color: $nb-pill-background;
+    border-radius: $nb-pill-border-radius;
+    font-weight: bold;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .#{$nb-namespace}c-pill.is-active {
+    box-shadow: 0 0 0 ($nb-active-border-width /2) $nb-pill-color-alpha inset;
+  }
+
+  .#{$nb-namespace}c-pill[disabled] {
+    cursor: not-allowed;
+    color: $nb-pill-color-disabled;
+    background-color: $nb-pill-background-disabled;
+  }
+
+  .#{$nb-namespace}c-pill--border {
+    border-width: 1px;
+    border-style: solid;
+    border-color: $nb-color-grey-light;
+  }
+
+  .#{$nb-namespace}c-pill--sm {
+    padding: $nb-pill-sm-padding;
+  }
+
+  .#{$nb-namespace}c-pill--md {
+    padding: $nb-pill-md-padding;
+  }
+
+  .#{$nb-namespace}c-pill--lg {
+    padding: $nb-pill-lg-padding;
+  }
+
+  .#{$nb-namespace}c-pill--full {
+    width: 100%;
+  }
+
+  .#{$nb-namespace}c-pill--alpha {
+    @include pill-color($nb-pill-color-alpha);
+  }
+
+  .#{$nb-namespace}c-pill--beta {
+    @include pill-color($nb-pill-color-beta);
+  }
+
+  .#{$nb-namespace}c-pill--success {
+    @include pill-color($nb-color-success);
+  }
+
+  .#{$nb-namespace}c-pill--info {
+    @include pill-color($nb-color-info);
+  }
+
+  .#{$nb-namespace}c-pill--warning {
+    @include pill-color($nb-color-warning);
+  }
+
+  .#{$nb-namespace}c-pill--error {
+    @include pill-color($nb-color-error);
+  }
+}
