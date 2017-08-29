@@ -1,6 +1,6 @@
 @mixin build-foldable-segments {
   > .c-foldable__header {
-    padding-right: $nb-spacing-unit-double;
+    padding-right: ($nb-spacing-unit * 3.5);
   }
 
   > .c-foldable__header--padding {
