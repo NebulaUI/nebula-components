@@ -51,30 +51,53 @@ const Btn = () => (
           </div>
           <div className="o-grid o-grid--gutter-md o-grid--matrix">
             <div className="o-grid__item u-1/2">
-              <Dropdown className="c-btn-group__dropdown-toggle--left">
-                <DropdownToggle to="/">
+              <Dropdown className="c-btn-dropdown--toggle-left c-btn-dropdown--full">
+                <a href="/" className="c-btn c-btn--alpha c-btn--md c-btn--full">
                   Click to go to link
-                </DropdownToggle>
+                </a>
+                <DropdownToggle />
                 <DropdownContent>
-                  <ul className="o-bare-list">
-                    <li className="o-bare-list__item">Option 1</li>
-                    <li className="o-bare-list__item">Option 2</li>
-                    <li className="o-bare-list__item">Option 3</li>
-                  </ul>
+                  <div className="c-card">
+                    <ul className="o-bare-list">
+                      <li className="o-bare-list__item">Option 1</li>
+                      <li className="o-bare-list__item">Option 2</li>
+                      <li className="o-bare-list__item">Option 3</li>
+                    </ul>
+                  </div>
                 </DropdownContent>
               </Dropdown>
             </div>
             <div className="o-grid__item u-1/2">
-              <Dropdown className="c-btn-group__dropdown-toggle--right">
-                <DropdownToggle to="/">
+              <Dropdown className="c-btn-dropdown--toggle-right">
+                <a href="/" className="c-btn c-btn--alpha c-btn--lg c-btn--full">
                   Click to go to link
-                </DropdownToggle>
+                </a>
+                <DropdownToggle />
                 <DropdownContent>
-                  <ul className="o-bare-list">
-                    <li className="o-bare-list__item">Option 1</li>
-                    <li className="o-bare-list__item">Option 2</li>
-                    <li className="o-bare-list__item">Option 3</li>
-                  </ul>
+                  <div className="c-card">
+                    <ul className="o-bare-list">
+                      <li className="o-bare-list__item">Option 1</li>
+                      <li className="o-bare-list__item">Option 2</li>
+                      <li className="o-bare-list__item">Option 3</li>
+                    </ul>
+                  </div>
+                </DropdownContent>
+              </Dropdown>
+            </div>
+            <div className="o-grid__item u-1/2">
+              <Dropdown className="c-btn-dropdown--toggle-right">
+                <a href="/" className="c-btn c-btn--alpha c-btn--sm c-btn--full">
+                  Click to go to link
+                </a>
+                <DropdownToggle />
+                <DropdownContent>
+                  <div className="c-card">
+                    <ul className="o-bare-list">
+                      <li className="o-bare-list__item">Option 1</li>
+                      <li className="o-bare-list__item">Option 2</li>
+                      <li className="o-bare-list__item">Option 3</li>
+                    </ul>
+                  </div>
                 </DropdownContent>
               </Dropdown>
             </div>

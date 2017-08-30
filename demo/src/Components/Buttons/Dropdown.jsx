@@ -48,7 +48,7 @@ class Dropdown extends Component {
     })
     return (
       <div
-        className={classNames('c-btn-group', className, { 'is-open': isOpen })}
+        className={classNames('c-btn-dropdown', className, { 'is-open': isOpen })}
         ref={(node) => { this.wrapperRef = node }}
       >
         {enhancedChildren}

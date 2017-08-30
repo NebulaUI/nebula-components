@@ -3,7 +3,7 @@ import T from 'prop-types'
 import classNames from 'classnames'
 
 const DropdownContent = ({ children, className }) => (
-  <div className={classNames('c-btn-group__dropdown', className)}>
+  <div className={classNames('c-btn-dropdown__content', className)}>
     { children }
   </div>
 )
