@@ -54,7 +54,6 @@ class App extends Component {
           <Flyouts />
           <OpenModal open={this.openModal} />
           <Tabs />
-
         </section>
       </div>
     )
