@@ -1,6 +1,6 @@
 {
   "name": "nebula-components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Building on top of Nebula CSS a series of common components",
   "repository": "https://github.com/rbrtsmith/nebula-components",
   "scripts": {
