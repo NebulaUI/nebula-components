@@ -10,7 +10,7 @@
     "build": "cd demo && npm run build",
     "start": "cd demo && npm run start",
     "test": "npm run lint",
-    "deploy": "npm run lint && npm run build && gh-pages -d demo/dist"
+    "deploy": "npm run lint && npm run build && gh-pages -d demo/dist",
     "prepublish": "npm run build"
   },
   "keywords": [
