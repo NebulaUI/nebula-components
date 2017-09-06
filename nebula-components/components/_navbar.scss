@@ -98,6 +98,22 @@
   vertical-align: middle;
 }
 
+.c-navbar__content-wrapper {
+  @include nb-respond-to('max-#{$nb-nav-bp-key}') {
+    width: $nb-navbar-collapsed-width;
+    height: calc(100vh - #{$nb-navbar-height-collapsed});
+    overflow-y: auto;
+    margin-top: 1px;
+    margin-left: -$nb-navbar-collapsed-width;
+    background: $nb-color-white;
+  }
+}
+
+.#{$nb-namespace}c-navbar.is-open .#{$nb-namespace}c-navbar__content-wrapper {
+  margin-left: 0;
+  transition: margin-left $nb-transition-duration;
+}
+
 .#{$nb-namespace}c-navbar__content {
   margin: 0;
   padding: 0;
@@ -108,26 +124,6 @@
   }
 }
 
-.#{$nb-namespace}c-navbar__content:not(.#{$nb-namespace}c-navbar__content--keep-at-top) {
-  @include nb-respond-to('max-#{$nb-nav-bp-key}') {
-    width: $nb-navbar-collapsed-width;
-    background: $nb-color-white;
-    transform: translateX(-100%);
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      background-color: $nb-navbar-background-color;
-      border-right: 1px solid $nb-color-base-border;
-      content: ' ';
-    }
-  }
-
-}
-
 .#{$nb-namespace}c-navbar__content--keep-at-top {
   @include nb-respond-to('max-#{$nb-nav-bp-key}') {
     position: absolute;
@@ -136,24 +132,11 @@
   }
 }
 
-.#{$nb-namespace}c-navbar__content + .#{$nb-namespace}c-navbar__content {
-  @include nb-respond-to('max-#{$nb-nav-bp-key}') {
-    &::before {
-      display: none;
-    }
-  }
-}
-
 .#{$nb-namespace}c-navbar__content--right {
   @include nb-respond-to($nb-nav-bp-key) {
     padding-left: 0;
     float: right;
   }
-}
-
-.#{$nb-namespace}c-navbar.is-open .#{$nb-namespace}c-navbar__content {
-  transform: translateX(0);
-  transition: transform $nb-transition-duration;
 }
 
 :not(.#{$nb-namespace}c-navbar__dropdown) > .#{$nb-namespace}c-navbar__item {
@@ -199,6 +182,10 @@
   background: $nb-navbar-background-color;
   color: inherit;
   text-decoration: none;
+
+  @include nb-respond-to($nb-nav-bp-key) {
+    height: $nb-navbar-height;
+  }
 
   &::before {
     position: absolute;
