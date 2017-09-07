@@ -5,35 +5,33 @@ const Pagination = () => (
     <div className="o-site-wrap o-site-wrap--padding">
       <h4>Pagination</h4>
       <nav aria-label="Page navigation">
-        <ol className="c-pagination o-inline-list o-inline-list--spaced-md">
-          <li className="c-pagination__item o-inline-list__item">
-            <a className="c-pagination__link" href="" disabled>
-              Previous
-            </a>
+        <ol className="c-pagination">
+          <li className="c-pagination__item">
+            <a className="c-pagination__link c-pagination__link--previous" href="">Prev</a>
           </li>
-          <li className="c-pagination__item o-inline-list__item">
+          <li className="c-pagination__item">
             <a className="c-pagination__link" href="">1</a>
           </li>
-          <li className="c-pagination__item o-inline-list__item">
-            <a className="c-pagination__link" href="">2</a>
+          <li className="c-pagination__item">
+            <a className="c-pagination__link" href="" disabled>2</a>
           </li>
-          <li className="c-pagination__item o-inline-list__item">
+          <li className="c-pagination__item">
             <a className="c-pagination__link" href="">3</a>
           </li>
-          <li className="c-pagination__item o-inline-list__item">
+          <li className="c-pagination__item">
             <a className="c-pagination__link c-pagination__link--more" href="">...</a>
           </li>
-          <li className="c-pagination__item o-inline-list__item">
+          <li className="c-pagination__item">
             <a className="c-pagination__link is-active" href="">12</a>
           </li>
-          <li className="c-pagination__item o-inline-list__item">
+          <li className="c-pagination__item">
             <a className="c-pagination__link" href="">13</a>
           </li>
-          <li className="c-pagination__item o-inline-list__item">
-            <a className="c-pagination__link" href="">14</a>
+          <li className="c-pagination__item">
+            <a className="c-pagination__link" href="">1014</a>
           </li>
-          <li className="c-pagination__item o-inline-list__item">
-            <a className="c-pagination__link" href="">
+          <li className="c-pagination__item">
+            <a className="c-pagination__link c-pagination__link--next" href="">
               Next
             </a>
           </li>
