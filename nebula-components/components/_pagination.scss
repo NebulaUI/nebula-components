@@ -1,5 +1,4 @@
-@if $nb-use-pagination {
-
+@if ($nb-use-pagination) {
   .#{$nb-namespace}c-pagination {
     margin: 0;
     margin-left: -$nb-spacing-unit-half;
@@ -27,6 +26,7 @@
     text-align: center;
     background-color: $nb-color-white;
   }
+
   .#{$nb-namespace}c-pagination__link:not([disabled]) {
     &:hover,
     &:focus {
@@ -35,7 +35,7 @@
         linear-gradient(to top, $nb-color-alpha $width, transparent $width),
         linear-gradient(to right, $nb-color-alpha $width, transparent $width),
         linear-gradient(to bottom, $nb-color-alpha $width, transparent $width),
-        linear-gradient(to left, $nb-color-alpha $width, transparent $width)
+        linear-gradient(to left, $nb-color-alpha $width, transparent $width);
     }
   }
   
