@@ -11,6 +11,7 @@ import Tabs from './Components/Tabs'
 import ModalExample from './Components/Modal/Example'
 import OpenModal from './Components/Modal/Open'
 import SiteContent from './Components/SiteContent'
+import Pagination from './Components/Pagination'
 
 class App extends Component {
   constructor() {
@@ -54,6 +55,7 @@ class App extends Component {
           <Flyouts />
           <OpenModal open={this.openModal} />
           <Tabs />
+          <Pagination />
           <div className="o-site-wrap o-site-wrap--padding">
             <h3>Generic table</h3>
             <div className="c-table-container">
