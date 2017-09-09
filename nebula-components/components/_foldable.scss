@@ -1,81 +1,87 @@
 @mixin build-foldable-segments {
-  > .c-foldable__header {
+  > .#{$nb-namespace}c-foldable__header {
     padding-right: ($nb-spacing-unit * 3.5);
   }
 
-  > .c-foldable__header--padding {
+  > .#{$nb-namespace}c-foldable__header--padding {
     padding-top: $nb-spacing-unit;
     padding-bottom: $nb-spacing-unit;
   }
 
-  > .c-foldable__header > *:last-child {
+  > .#{$nb-namespace}c-foldable__header > *:last-child {
     margin-bottom: 0;
   }
 
-  > .c-foldable__header > .c-foldable__toggle {
+  > .#{$nb-namespace}c-foldable__header > .#{$nb-namespace}c-foldable__toggle {
     display: block;
     @include nb-input-icon(right, 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODUuMzQ0IiBoZWlnaHQ9IjE4NS4zNDQiIHZpZXdCb3g9IjAgMCAxODUuMzQ0IDE4NS4zNDQiPjxwYXRoIGZpbGw9IiMxNjE2MTYiIGQ9Ik05Mi42NzIgMTQ0LjM3M2MtMi43NTIgMC01LjQ5My0xLjA0NC03LjU5My0zLjEzOEwzLjE0NCA1OS4zYy00LjE5NC00LjE5OC00LjE5NC0xMC45OSAwLTE1LjE4IDQuMTk0LTQuMTk4IDEwLjk4Ny00LjE5OCAxNS4xOCAwbDc0LjM0NyA3NC4zNDIgNzQuMzQ3LTc0LjM0YzQuMTkzLTQuMiAxMC45ODYtNC4yIDE1LjE4IDAgNC4xOTMgNC4xOTMgNC4xOTMgMTAuOTggMCAxNS4xOGwtODEuOTQgODEuOTMzYy0yLjA5NCAyLjA5NC00Ljg0IDMuMTM4LTcuNTg4IDMuMTM4eiIvPjwvc3ZnPg==');
   }
 
-  > .c-foldable__body {
+  > .#{$nb-namespace}c-foldable__body {
     height: 0;
     overflow: hidden;
   }
 }
 
-.c-foldable--bordered:first-child {
-  border-top: 1px solid $nb-color-base-border;
-}
+@if $nb-use-foldable {
+  .#{$nb-namespace}c-foldable--bordered:first-child {
+    border-top: 1px solid $nb-color-base-border;
+  }
 
-.c-foldable--bordered {
-  border-bottom: 1px solid $nb-color-base-border;
-}
+  .#{$nb-namespace}c-foldable--bordered {
+    border-bottom: 1px solid $nb-color-base-border;
+  }
 
-.c-foldable--bordered .c-foldable__header {
-  padding-top: $nb-spacing-unit;
-}
+  .#{$nb-namespace}c-foldable--bordered .#{$nb-namespace}c-foldable__header {
+    padding-top: $nb-spacing-unit;
+  }
 
-.c-foldable__header {
-  position: relative;
-}
+  .#{$nb-namespace}c-foldable__header {
+    position: relative;
+  }
 
-.c-foldable__toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: none;
-  width: 100%;
-  background: transparent;
-}
+  .#{$nb-namespace}c-foldable__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    background: transparent;
+  }
 
-.c-foldable__chevron {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: rotate(0) translateY(-50%);
-}
+  .#{$nb-namespace}c-foldable__toggle[disabled] {
+    opacity: 0.6;
+  }
 
-.c-foldable:not([class*='c-foldable@']) {
-  @include build-foldable-segments;
-}
+  .#{$nb-namespace}c-foldable__chevron {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: rotate(0) translateY(-50%);
+  }
 
-@each $key, $value in $nb-breakpoints {
-  .c-foldable\@max-#{$key} {
-    @include nb-respond-to('max-#{$key}') {
-      @include build-foldable-segments;
+  .#{$nb-namespace}c-foldable:not([class*='c-foldable@']) {
+    @include build-foldable-segments;
+  }
+
+  @each $key, $value in $nb-breakpoints {
+    .#{$nb-namespace}c-foldable\@max-#{$key} {
+      @include nb-respond-to('max-#{$key}') {
+        @include build-foldable-segments;
+      }
     }
   }
-}
 
-[class*='c-foldable'].is-open > .c-foldable__body {
-  height: auto;
-  overflow: visible;
-}
+  [class*='c-foldable'].is-open > .#{$nb-namespace}c-foldable__body {
+    height: auto;
+    overflow: visible;
+  }
 
-// reason: Requires the high-specificity selector below to allow nesting of foldable components.
-// stylelint-disable-next-line
-[class*='c-foldable'].is-open > .c-foldable__header > .c-foldable__toggle {
-  transform: rotateX(180deg);
+  // reason: Requires the high-specificity selector below to allow nesting of foldable components.
+  // stylelint-disable-next-line
+  [class*='c-foldable'].is-open > .#{$nb-namespace}c-foldable__header > .#{$nb-namespace}c-foldable__toggle {
+    transform: rotateX(180deg);
+  }
 }
