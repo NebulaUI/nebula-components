@@ -20,6 +20,10 @@
     background-size: 40%;
   }
 
+  .#{$nb-namespace}c-btn-dropdown__toggle[disabled] {
+    opacity: 0.6;
+  }
+
   .#{$nb-namespace}c-btn--alpha + .#{$nb-namespace}c-btn-dropdown__toggle {
     @include btn-color(darken($nb-button-alpha-color, 10%));
   }
