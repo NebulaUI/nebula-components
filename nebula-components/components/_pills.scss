@@ -1,10 +1,10 @@
 @if $nb-use-pills {
   @mixin pill($bg: $nb-color-white, $txt: $nb-color-base-text) {
+    padding: ($nb-spacing-unit-half / 2) $nb-spacing-unit-half;
     color: $txt;
     background-color: $bg;
     transition: background-color $nb-transition-duration;
-    border-radius: $nb-border-radius;
-    padding: $nb-spacing-unit-half $nb-spacing-unit;
+    border-radius: $nb-spacing-unit;
 
     &:focus {
       outline: none;
@@ -24,7 +24,7 @@
 
   .#{$nb-namespace}c-pill.is-active {
     box-shadow: 0 0 0 ($nb-active-border-width /2) $nb-color-alpha inset;
-    
+
     &:hover,
     &:focus {
       box-shadow: 0 0 0 ($nb-active-border-width /2) lighten($nb-color-alpha, 10%) inset;
@@ -37,7 +37,7 @@
   }
 
   .#{$nb-namespace}c-pill--border {
-    border: $nb-color-base-border;
+    border: 1px solid $nb-color-base-border;
   }
 
   .#{$nb-namespace}c-pill--alpha {
