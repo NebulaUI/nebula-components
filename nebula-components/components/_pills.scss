@@ -1,0 +1,67 @@
+@if $nb-use-pills {
+  @mixin pill($bg: $nb-color-white, $txt: $nb-color-base-text) {
+    padding: ($nb-spacing-unit-half / 2) $nb-spacing-unit-half;
+    color: $txt;
+    background-color: $bg;
+    transition: background-color $nb-transition-duration;
+    border-radius: $nb-spacing-unit;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @mixin pill-hover($bg, $darkenAmmount: 10%) {
+    &:hover,
+    &:focus {
+      background-color: darken($bg, $darkenAmmount);
+    }
+  }
+
+  .#{$nb-namespace}c-pill {
+    @include pill;
+  }
+
+  .#{$nb-namespace}c-pill.is-active {
+    box-shadow: 0 0 0 ($nb-active-border-width /2) $nb-color-alpha inset;
+  }
+
+  .#{$nb-namespace}c-pill[disabled] {
+    cursor: not-allowed;
+    @include pill($nb-color-grey-v-light, $nb-color-grey);
+  }
+
+  .#{$nb-namespace}c-pill--border {
+    border: 1px solid $nb-color-base-border;
+  }
+
+  .#{$nb-namespace}c-pill--alpha {
+    @include pill($nb-color-alpha, $nb-color-white);
+    @include pill-hover($nb-color-alpha);
+  }
+
+  .#{$nb-namespace}c-pill--beta {
+    @include pill($nb-color-beta, $nb-color-white);
+    @include pill-hover($nb-color-beta);
+  }
+
+  .#{$nb-namespace}c-pill--success {
+    @include pill($nb-color-success, $nb-color-white);
+    @include pill-hover($nb-color-success);
+  }
+
+  .#{$nb-namespace}c-pill--info {
+    @include pill($nb-color-info, $nb-color-white);
+    @include pill-hover($nb-color-info);
+  }
+
+  .#{$nb-namespace}c-pill--warning {
+    @include pill($nb-color-warning, $nb-color-white);
+    @include pill-hover($nb-color-warning);
+  }
+
+  .#{$nb-namespace}c-pill--error {
+    @include pill($nb-color-error, $nb-color-white);
+    @include pill-hover($nb-color-error, 17%);
+  }
+}
