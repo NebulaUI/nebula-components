@@ -11,10 +11,10 @@
     }
   }
 
-  @mixin pill-custom($bg) {
+  @mixin pill-hover($bg, $darkenAmmount: 10%) {
     &:hover,
     &:focus {
-      background-color: darken($bg, 10%);
+      background-color: darken($bg, $darkenAmmount);
     }
   }
 
@@ -24,11 +24,6 @@
 
   .#{$nb-namespace}c-pill.is-active {
     box-shadow: 0 0 0 ($nb-active-border-width /2) $nb-color-alpha inset;
-
-    &:hover,
-    &:focus {
-      box-shadow: 0 0 0 ($nb-active-border-width /2) lighten($nb-color-alpha, 10%) inset;
-    }
   }
 
   .#{$nb-namespace}c-pill[disabled] {
@@ -42,31 +37,31 @@
 
   .#{$nb-namespace}c-pill--alpha {
     @include pill($nb-color-alpha, $nb-color-white);
-    @include pill-custom($nb-color-alpha);
+    @include pill-hover($nb-color-alpha);
   }
 
   .#{$nb-namespace}c-pill--beta {
     @include pill($nb-color-beta, $nb-color-white);
-    @include pill-custom($nb-color-beta);
+    @include pill-hover($nb-color-beta);
   }
 
   .#{$nb-namespace}c-pill--success {
     @include pill($nb-color-success, $nb-color-white);
-    @include pill-custom($nb-color-success);
+    @include pill-hover($nb-color-success);
   }
 
   .#{$nb-namespace}c-pill--info {
     @include pill($nb-color-info, $nb-color-white);
-    @include pill-custom($nb-color-info);
+    @include pill-hover($nb-color-info);
   }
 
   .#{$nb-namespace}c-pill--warning {
     @include pill($nb-color-warning, $nb-color-white);
-    @include pill-custom($nb-color-warning);
+    @include pill-hover($nb-color-warning);
   }
 
   .#{$nb-namespace}c-pill--error {
     @include pill($nb-color-error, $nb-color-white);
-    @include pill-custom($nb-color-error);
+    @include pill-hover($nb-color-error, 17%);
   }
 }
