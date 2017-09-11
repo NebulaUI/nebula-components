@@ -1,5 +1,5 @@
 @if $nb-use-table {
-  .c-table-container {
+  .#{$nb-namespace}c-table-container {
     overflow: auto;
 
     &::-webkit-scrollbar {
@@ -17,27 +17,27 @@
     }
   }
 
-  .c-table {
+  .#{$nb-namespace}c-table {
     width: 100%;
     margin-bottom: 0;
     border-collapse: collapse;
   }
 
-  .c-table__header {
+  .#{$nb-namespace}c-table__header {
     border-bottom: 1px solid $nb-color-base-border;
     background-color: $nb-color-white;
   }
 
-  .c-table__row:nth-child(even) {
+  .#{$nb-namespace}c-table__row:nth-child(even) {
     background: $nb-color-grey-v-light;
   }
 
-  .c-table__row:nth-child(odd) {
+  .#{$nb-namespace}c-table__row:nth-child(odd) {
     background: $nb-color-white;
   }
 
-  .c-table__cell,
-  .c-table__header-cell {
+  .#{$nb-namespace}c-table__cell,
+  .#{$nb-namespace}c-table__header-cell {
     padding: $nb-spacing-unit;
     vertical-align: middle;
     text-align: left;
@@ -48,7 +48,7 @@
     }
   }
 
-  .c-table__cell > a {
+  .#{$nb-namespace}c-table__cell > a {
     display: inline-block;
     // Creating a larger hit area for improved touch-UX
     margin-top: -$nb-spacing-unit-half;
@@ -58,11 +58,11 @@
   }
 
 
-  .c-table--sorted .c-table__header-cell--sortable {
+  .#{$nb-namespace}c-table--sorted .#{$nb-namespace}c-table__header-cell--sortable {
     padding: 0;
   }
 
-  .c-table__sort-button {
+  .#{$nb-namespace}c-table__sort-button {
     width: 100%;
     padding: $nb-spacing-unit;
     white-space: nowrap;
@@ -76,7 +76,7 @@
     }
   }
 
-  .c-table__sort-text {
+  .#{$nb-namespace}c-table__sort-text {
     vertical-align: text-bottom;
 
     &::after {
@@ -94,12 +94,12 @@
     }
   }
 
-  .c-table__sort-button.is-active .c-table__sort-text::after {
+  .#{$nb-namespace}c-table__sort-button.is-active .#{$nb-namespace}c-table__sort-text::after {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODUuMzQ0IiBoZWlnaHQ9IjE4NS4zNDQiIHZpZXdCb3g9IjAgMCAxODUuMzQ0IDE4NS4zNDQiPjxwYXRoIGZpbGw9IiMxNjE2MTYiIGQ9Ik05Mi42NzIgMTQ0LjM3M2MtMi43NTIgMC01LjQ5My0xLjA0NC03LjU5My0zLjEzOEwzLjE0NCA1OS4zYy00LjE5NC00LjE5OC00LjE5NC0xMC45OSAwLTE1LjE4IDQuMTk0LTQuMTk4IDEwLjk4Ny00LjE5OCAxNS4xOCAwbDc0LjM0NyA3NC4zNDIgNzQuMzQ3LTc0LjM0YzQuMTkzLTQuMiAxMC45ODYtNC4yIDE1LjE4IDAgNC4xOTMgNC4xOTMgNC4xOTMgMTAuOTggMCAxNS4xOGwtODEuOTQgODEuOTMzYy0yLjA5NCAyLjA5NC00Ljg0IDMuMTM4LTcuNTg4IDMuMTM4eiIvPjwvc3ZnPg==');
     transform: rotate(180deg) scale(0.9);
   }
 
-  .c-table__sort-button.is-descending .c-table__sort-text::after {
+  .#{$nb-namespace}c-table__sort-button.is-descending .#{$nb-namespace}c-table__sort-text::after {
     transform: scale(0.9);
   }
 
@@ -107,52 +107,52 @@
   /* stylelint-disable max-nesting-depth  */
   @each $key, $value in $nb-table-collapse-map {
     @include nb-respond-to('max-#{$key}', $nb-table-collapse-map) {
-      .c-table--stack\@max-#{$key} {
-        &.c-table,
-        .c-table__header,
-        .c-table__body,
-        .c-table__row,
-        .c-table__cell {
+      .#{$nb-namespace}c-table--stack\@max-#{$key} {
+        &.#{$nb-namespace}c-table,
+        .#{$nb-namespace}c-table__header,
+        .#{$nb-namespace}c-table__body,
+        .#{$nb-namespace}c-table__row,
+        .#{$nb-namespace}c-table__cell {
           display: block;
         }
 
         @media all and (min-width:0\0) {
-          .c-table__cell {
+          .#{$nb-namespace}c-table__cell {
             // MQ targets IE9.
             width: 100%;
             float: left;
           }
 
-          .c-table__header-cell {
+          .#{$nb-namespace}c-table__header-cell {
             // MQ targets IE9.
             float: left;
           }
         }
 
-        .c-table__header-cell:not(.c-table__header-cell--sortable),
-        &:not(.c-table--sorted) .c-table__header {
+        .#{$nb-namespace}c-table__header-cell:not(.#{$nb-namespace}c-table__header-cell--sortable),
+        &:not(.#{$nb-namespace}c-table--sorted) .#{$nb-namespace}c-table__header {
           @include nb-visually-hidden;
         }
 
-        .c-table__header {
+        .#{$nb-namespace}c-table__header {
           padding-left: $nb-spacing-unit-half;
         }
 
-        .c-table__header-cell--sortable {
+        .#{$nb-namespace}c-table__header-cell--sortable {
           display: inline-block;
         }
 
-        .c-table__row {
+        .#{$nb-namespace}c-table__row {
           padding: $nb-spacing-unit-half 0;
         }
 
-        .c-table__cell,
-        .c-table__header-cell {
+        .#{$nb-namespace}c-table__cell,
+        .#{$nb-namespace}c-table__header-cell {
           padding-top: $nb-spacing-unit-half;
           padding-bottom: $nb-spacing-unit-half;
         }
 
-        &:not(.c-table--no-labels) .c-table__cell {
+        &:not(.#{$nb-namespace}c-table--no-labels) .#{$nb-namespace}c-table__cell {
           overflow: hidden;
           margin-right: $nb-spacing-unit-half;
           padding-left: $nb-table-cell-label-width;
@@ -160,7 +160,7 @@
           vertical-align: top;
         }
 
-        &:not(.c-table--no-labels) .c-table__cell[data-label]::before {
+        &:not(.#{$nb-namespace}c-table--no-labels) .#{$nb-namespace}c-table__cell[data-label]::before {
           display: block;
           width: 0;
           float: left;
@@ -171,13 +171,13 @@
         }
       }
 
-      .c-table--sorted.c-table--stack\@max-#{$key} {
-        .c-table__header {
+      .#{$nb-namespace}c-table--sorted.#{$nb-namespace}c-table--stack\@max-#{$key} {
+        .#{$nb-namespace}c-table__header {
           padding-top: $nb-spacing-unit-half;
           padding-left: 0;
         }
 
-        .c-table__header::before {
+        .#{$nb-namespace}c-table__header::before {
           display: table-cell;
           padding: $nb-spacing-unit-half;
           white-space: nowrap;
@@ -185,7 +185,7 @@
           content: attr(aria-label);
         }
 
-        .c-table__header-row {
+        .#{$nb-namespace}c-table__header-row {
           display: table-cell;
           width: 100%;
           padding: 0;
@@ -196,11 +196,11 @@
           }
         }
 
-        .c-table__header-cell {
+        .#{$nb-namespace}c-table__header-cell {
           padding: 0 $nb-spacing-unit-half $nb-spacing-unit-half 0;
         }
 
-        .c-table__sort-button {
+        .#{$nb-namespace}c-table__sort-button {
           padding: $nb-spacing-unit-half ($nb-spacing-unit * 0.75);
           background: $nb-color-grey-v-light;
         }
