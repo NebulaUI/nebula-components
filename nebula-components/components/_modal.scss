@@ -11,6 +11,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: -1;
     background: rgba($nb-color-black, 0.75);
     transform: translate3d(-100%, 0, 0);
     opacity: 0;
@@ -20,6 +21,7 @@
     transform: translate3d(0, 0, 0);
     opacity: 1;
     transition: opacity $nb-transition-duration;
+    cursor: default;
   }
 
   .#{$nb-namespace}c-modal__body {
@@ -34,6 +36,7 @@
     padding-right: $nb-spacing-unit;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.75);
+    backface-visibility: hidden;
   }
 
   .#{$nb-namespace}c-modal.is-open .#{$nb-namespace}c-modal__body {
