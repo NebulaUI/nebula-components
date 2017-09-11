@@ -1,7 +1,10 @@
-@if $use-nb-icon {
-  $icon-size: 1em;
-
+@if $nb-use-icon {
   .#{$nb-namespace}c-icon {
+    display: inline-block;
+  }
+
+  .#{$nb-namespace}c-icon__svg {
+    $icon-size: 1em;
     display: inline-block;
     width: $icon-size;
     height: $icon-size;
@@ -9,11 +12,11 @@
     fill: currentColor;
   }
 
-  .#{$nb-namespace}c-icon--left {
+  .#{$nb-namespace}c-icon__svg--left {
     margin-right: $nb-spacing-unit-half;
   }
 
-  .#{$nb-namespace}c-icon--right {
+  .#{$nb-namespace}c-icon__svg--right {
     margin-left: $nb-spacing-unit-half;
   }
 }

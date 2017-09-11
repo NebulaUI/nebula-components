@@ -6,7 +6,6 @@
 
   .#{$nb-namespace}c-flyout.is-open > .#{$nb-namespace}c-flyout__content {
     transform: scale(1);
-    z-index: 3;
   }
 
   .#{$nb-namespace}c-flyout__content {

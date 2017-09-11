@@ -27,6 +27,11 @@
     }
   }
 
+  .#{$nb-namespace}c-form-input__input:focus + .#{$nb-namespace}c-form-input__label::before {
+    outline: 1px dotted #212121;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
   .#{$nb-namespace}c-form-input__label--radio::before {
     border-radius: 50%;
   }

@@ -1,0 +1,210 @@
+@if $nb-use-table {
+  .#{$nb-namespace}c-table-container {
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $nb-color-grey-light;
+      border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0;
+      background: $nb-color-grey;
+    }
+  }
+
+  .#{$nb-namespace}c-table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+  }
+
+  .#{$nb-namespace}c-table__header {
+    border-bottom: 1px solid $nb-color-base-border;
+    background-color: $nb-color-white;
+  }
+
+  .#{$nb-namespace}c-table__row:nth-child(even) {
+    background: $nb-color-grey-v-light;
+  }
+
+  .#{$nb-namespace}c-table__row:nth-child(odd) {
+    background: $nb-color-white;
+  }
+
+  .#{$nb-namespace}c-table__cell,
+  .#{$nb-namespace}c-table__header-cell {
+    padding: $nb-spacing-unit;
+    vertical-align: middle;
+    text-align: left;
+
+    @include nb-respond-to('max-sm') {
+      padding-left: $nb-spacing-unit-half;
+      padding-right: $nb-spacing-unit-half;
+    }
+  }
+
+  .#{$nb-namespace}c-table__cell > a {
+    display: inline-block;
+    // Creating a larger hit area for improved touch-UX
+    margin-top: -$nb-spacing-unit-half;
+    margin-bottom: -$nb-spacing-unit-half;
+    padding-top: $nb-spacing-unit-half;
+    padding-bottom: $nb-spacing-unit-half;
+  }
+
+
+  .#{$nb-namespace}c-table--sorted .#{$nb-namespace}c-table__header-cell--sortable {
+    padding: 0;
+  }
+
+  .#{$nb-namespace}c-table__sort-button {
+    width: 100%;
+    padding: $nb-spacing-unit;
+    white-space: nowrap;
+    text-align: left;
+    background: transparent;
+    color: $nb-color-base-text;
+
+    @include nb-respond-to('max-sm') {
+      padding-left: $nb-spacing-unit-half;
+      padding-right: $nb-spacing-unit-half;
+    }
+  }
+
+  .#{$nb-namespace}c-table__sort-text {
+    vertical-align: text-bottom;
+
+    &::after {
+      $size: 16px;
+      display: inline-block;
+      width: $size;
+      height: $size;
+      margin-left: $nb-spacing-unit-half;
+      vertical-align: middle;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTg3IiBoZWlnaHQ9IjIzOCIgdmlld0JveD0iMzA0IC0xMSAxODcgMjM4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiNiOGI4YjgiIGQ9Ik0zOTcuNjcyIDIyNi4zNzNjLTIuNzUyIDAtNS40OTMtMS4wNDQtNy41OTMtMy4xMzhMMzA4LjE0MyAxNDEuM2MtNC4xOTQtNC4xOTgtNC4xOTQtMTAuOTkgMC0xNS4xOCA0LjE5NC00LjE5OCAxMC45ODctNC4xOTggMTUuMTggMGw3NC4zNDcgNzQuMzQyIDc0LjM0OC03NC4zNGM0LjE5My00LjIgMTAuOTg2LTQuMiAxNS4xOCAwIDQuMTkzIDQuMTkzIDQuMTkzIDEwLjk4IDAgMTUuMThsLTgxLjk0IDgxLjkzM2MtMi4wOTQgMi4wOTQtNC44NCAzLjEzOC03LjU4OCAzLjEzOGguMDAyek0zOTcuMzI4LTEwLjM3M2MyLjc1MiAwIDUuNDkzIDEuMDQ0IDcuNTkzIDMuMTM4TDQ4Ni44NTcgNzQuN2M0LjE5NCA0LjE5OCA0LjE5NCAxMC45OSAwIDE1LjE4LTQuMTk0IDQuMTk4LTEwLjk4NyA0LjE5OC0xNS4xOCAwTDM5Ny4zMyAxNS41MzhsLTc0LjM0OCA3NC4zNGMtNC4xOTMgNC4yLTEwLjk4NiA0LjItMTUuMTggMC00LjE5My00LjE5My00LjE5My0xMC45OCAwLTE1LjE4bDgxLjk0LTgxLjkzM2MyLjA5NC0yLjA5NCA0Ljg0LTMuMTM4IDcuNTg4LTMuMTM4aC0uMDAyeiIvPjwvc3ZnPg==');
+      content: ' ';
+    }
+  }
+
+  .#{$nb-namespace}c-table__sort-button.is-active .#{$nb-namespace}c-table__sort-text::after {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODUuMzQ0IiBoZWlnaHQ9IjE4NS4zNDQiIHZpZXdCb3g9IjAgMCAxODUuMzQ0IDE4NS4zNDQiPjxwYXRoIGZpbGw9IiMxNjE2MTYiIGQ9Ik05Mi42NzIgMTQ0LjM3M2MtMi43NTIgMC01LjQ5My0xLjA0NC03LjU5My0zLjEzOEwzLjE0NCA1OS4zYy00LjE5NC00LjE5OC00LjE5NC0xMC45OSAwLTE1LjE4IDQuMTk0LTQuMTk4IDEwLjk4Ny00LjE5OCAxNS4xOCAwbDc0LjM0NyA3NC4zNDIgNzQuMzQ3LTc0LjM0YzQuMTkzLTQuMiAxMC45ODYtNC4yIDE1LjE4IDAgNC4xOTMgNC4xOTMgNC4xOTMgMTAuOTggMCAxNS4xOGwtODEuOTQgODEuOTMzYy0yLjA5NCAyLjA5NC00Ljg0IDMuMTM4LTcuNTg4IDMuMTM4eiIvPjwvc3ZnPg==');
+    transform: rotate(180deg) scale(0.9);
+  }
+
+  .#{$nb-namespace}c-table__sort-button.is-descending .#{$nb-namespace}c-table__sort-text::after {
+    transform: scale(0.9);
+  }
+
+  /* Reason for disable @Each and nested MQ, */
+  /* stylelint-disable max-nesting-depth  */
+  @each $key, $value in $nb-table-collapse-map {
+    @include nb-respond-to('max-#{$key}', $nb-table-collapse-map) {
+      .#{$nb-namespace}c-table--stack\@max-#{$key} {
+        &.#{$nb-namespace}c-table,
+        .#{$nb-namespace}c-table__header,
+        .#{$nb-namespace}c-table__body,
+        .#{$nb-namespace}c-table__row,
+        .#{$nb-namespace}c-table__cell {
+          display: block;
+        }
+
+        @media all and (min-width:0\0) {
+          .#{$nb-namespace}c-table__cell {
+            // MQ targets IE9.
+            width: 100%;
+            float: left;
+          }
+
+          .#{$nb-namespace}c-table__header-cell {
+            // MQ targets IE9.
+            float: left;
+          }
+        }
+
+        .#{$nb-namespace}c-table__header-cell:not(.#{$nb-namespace}c-table__header-cell--sortable),
+        &:not(.#{$nb-namespace}c-table--sorted) .#{$nb-namespace}c-table__header {
+          @include nb-visually-hidden;
+        }
+
+        .#{$nb-namespace}c-table__header {
+          padding-left: $nb-spacing-unit-half;
+        }
+
+        .#{$nb-namespace}c-table__header-cell--sortable {
+          display: inline-block;
+        }
+
+        .#{$nb-namespace}c-table__row {
+          padding: $nb-spacing-unit-half 0;
+        }
+
+        .#{$nb-namespace}c-table__cell,
+        .#{$nb-namespace}c-table__header-cell {
+          padding-top: $nb-spacing-unit-half;
+          padding-bottom: $nb-spacing-unit-half;
+        }
+
+        &:not(.#{$nb-namespace}c-table--no-labels) .#{$nb-namespace}c-table__cell {
+          overflow: hidden;
+          margin-right: $nb-spacing-unit-half;
+          padding-left: $nb-table-cell-label-width;
+          padding-right: 0;
+          vertical-align: top;
+        }
+
+        &:not(.#{$nb-namespace}c-table--no-labels) .#{$nb-namespace}c-table__cell[data-label]::before {
+          display: block;
+          width: 0;
+          float: left;
+          margin-left: calc(-#{$nb-table-cell-label-width} + #{$nb-spacing-unit-half});
+          vertical-align: top;
+          content: attr(data-label);
+          font-weight: bold;
+        }
+      }
+
+      .#{$nb-namespace}c-table--sorted.#{$nb-namespace}c-table--stack\@max-#{$key} {
+        .#{$nb-namespace}c-table__header {
+          padding-top: $nb-spacing-unit-half;
+          padding-left: 0;
+        }
+
+        .#{$nb-namespace}c-table__header::before {
+          display: table-cell;
+          padding: $nb-spacing-unit-half;
+          white-space: nowrap;
+          font-weight: bold;
+          content: attr(aria-label);
+        }
+
+        .#{$nb-namespace}c-table__header-row {
+          display: table-cell;
+          width: 100%;
+          padding: 0;
+          padding-right: $nb-spacing-unit-half;
+
+          @include nb-respond-to('max-xs') {
+            display: block;
+          }
+        }
+
+        .#{$nb-namespace}c-table__header-cell {
+          padding: 0 $nb-spacing-unit-half $nb-spacing-unit-half 0;
+        }
+
+        .#{$nb-namespace}c-table__sort-button {
+          padding: $nb-spacing-unit-half ($nb-spacing-unit * 0.75);
+          background: $nb-color-grey-v-light;
+        }
+      }
+    }
+  }
+}

@@ -14,16 +14,13 @@
     border-color: transparent;
     border-style: solid;
 
-    &:hover {
+    &:hover,
+    &:focus {
       outline: none;
 
       &::before {
         opacity: 0.65;
       }
-    }
-
-    &:focus {
-      outline: none;
     }
 
     &::before,
@@ -57,6 +54,14 @@
     overflow-x: auto;
     padding-bottom: 1px; // overflow hack #1
     white-space: nowrap;
+
+    @include nb-respond-to('sm') {
+      padding-bottom: 2px; // overflow hack #1
+    }
+
+    @include nb-respond-to('md') {
+      padding-bottom: 1px; // overflow hack #1
+    }
   }
 
   .#{$nb-namespace}c-tabs__list-wrapper {
@@ -66,7 +71,7 @@
     &::after {
       position: absolute;
       top: 0;
-      bottom: 0;
+      bottom: 1px;
       z-index: 1;
       width: 50px;
       pointer-events: none;
@@ -86,8 +91,11 @@
 
   .#{$nb-namespace}c-tabs__tab[disabled] {
     cursor: not-allowed;
-    color: $nb-tab-color-disabled;
-    background-color: $nb-tab-background-disabled;
+    opacity: 0.6;
+
+    &::before {
+      display: none;
+    }
   }
 
   .#{$nb-namespace}c-tabs__tab.is-active {
@@ -102,11 +110,14 @@
     }
   }
 
-  .#{$nb-namespace}c-tabs__panels {
-    margin-top: -1px; //overflow hack #1
-  }
-
   .#{$nb-namespace}c-tabs__panel {
+    margin-top: -1px; //overflow hack #1
+    @include nb-respond-to('md') {
+      margin-top: -2px; //overflow hack #1
+    }
+    @include nb-respond-to('lg') {
+      margin-top: -1px; //overflow hack #1
+    }
     @include nb-card;
   }
 }
