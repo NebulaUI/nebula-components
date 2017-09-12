@@ -39,11 +39,20 @@
     backface-visibility: hidden;
   }
 
+  .#{$nb-namespace}c-modal--align-top .#{$nb-namespace}c-modal__body {
+    transform: translate(-50%, 0) scale(0.75);
+    top: $nb-spacing-unit;
+  }
+
   .#{$nb-namespace}c-modal.is-open .#{$nb-namespace}c-modal__body {
     transform: translate(-50%, -50%) scale(1);
     height: auto;
     opacity: 1;
     transition: transform ($nb-transition-duration * 1.5) ($nb-transition-duration /1.5), opacity ($nb-transition-duration * 2) ($nb-transition-duration / 2);
+  }
+
+  .#{$nb-namespace}c-modal--align-top.is-open .#{$nb-namespace}c-modal__body {
+    transform: translate(-50%, 0) scale(1);
   }
 
   .#{$nb-namespace}c-modal__content {
