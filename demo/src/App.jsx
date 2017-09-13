@@ -8,6 +8,7 @@ import Cards from './Components/Cards'
 import StatusCards from './Components/Cards/StatusCards'
 import Flyouts from './Components/Flyouts'
 import Tabs from './Components/Tabs'
+import Loader from './Components/Loader'
 import ModalExample from './Components/Modal/Example'
 import OpenModal from './Components/Modal/Open'
 import Pills from './Components/Pills'
@@ -127,6 +128,7 @@ class App extends Component {
                 </tbody>
               </table>
             </div>
+            <Loader />
           </div>
         </section>
       </div>
