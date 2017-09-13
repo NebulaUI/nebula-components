@@ -279,7 +279,7 @@
   }
 }
 
-.#{$nb-namespace}c-navbar__dropdown-toggle.is-open::after {
+.#{$nb-namespace}c-navbar__item.is-open .#{$nb-namespace}c-navbar__dropdown-toggle::after {
   transform: rotate(180deg);
 }
 
@@ -318,7 +318,7 @@
   }
 }
 
-.#{$nb-namespace}c-navbar__dropdown-toggle.is-open + .#{$nb-namespace}c-navbar__dropdown {
+.#{$nb-namespace}c-navbar__item.is-open .#{$nb-namespace}c-navbar__dropdown {
   transform: translateY(0);
   opacity: 1;
   transition: transform $nb-transition-duration, opacity $nb-transition-duration;
@@ -328,7 +328,6 @@
     display: block;
   }
 }
-
 
 // TOGGLE
 $burger-width: 24px;
