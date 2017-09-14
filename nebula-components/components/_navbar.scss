@@ -260,11 +260,6 @@
   text-align: left;
   z-index: 1;
 
-  &:hover,
-  &:focus {
-    outline: none;
-  }
-
   &::after {
     width: 2rem;
     height: 2rem;
@@ -318,7 +313,7 @@
   }
 }
 
-.#{$nb-namespace}c-navbar__item.is-open .#{$nb-namespace}c-navbar__dropdown {
+.#{$nb-namespace}c-navbar__dropdown.is-open {
   transform: translateY(0);
   opacity: 1;
   transition: transform $nb-transition-duration, opacity $nb-transition-duration;
