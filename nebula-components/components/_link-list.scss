@@ -1,0 +1,45 @@
+@mixin nb-link-list-spacing {
+  $class: 'list';
+  $modifier: '--spaced';
+  @each $key, $value in $nb-list-spacing {
+    $compound-class: '#{$nb-namespace}c-#{$class}#{$modifier}-#{$key}';
+
+    .#{$compound-class} > .#{$nb-namespace}c-#{$class}__item {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+
+    @each $bp-key, $bp-value in $nb-breakpoints {
+      @include nb-respond-to($bp-key) {
+        .#{$compound-class}#{$nb-breakpoint-class}#{$bp-key} > .#{$nb-namespace}c-#{$class}__item {
+          padding-top: $value;
+          padding-bottom: $value;
+        }
+      }
+    }
+  }
+}
+
+@if $nb-use-link-list {
+  .#{$nb-namespace}c-list {
+    @include nb-bare-list;
+  }
+
+  .#{$nb-namespace}c-list__item + .#{$nb-namespace}c-list__item {
+    border-top: 1px solid $nb-color-base-border;
+  }
+
+  .#{$nb-namespace}c-list__link {
+    display: block;
+    padding: ($nb-spacing-unit-half /2);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $nb-color-white;
+      background: $nb-color-alpha;
+    }
+  }
+
+  @include nb-link-list-spacing;
+}
