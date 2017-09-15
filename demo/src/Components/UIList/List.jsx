@@ -3,7 +3,7 @@ import T from 'prop-types'
 import classNames from 'classnames'
 
 const List = ({ children, className }) => (
-  <ul className={classNames('o-ui-list o-ui-list--spaced-md', className)}>
+  <ul className={classNames('c-ui-list c-ui-list--spaced-md', className)}>
     { children }
   </ul>
 )

@@ -14,7 +14,7 @@ import OpenModal from './Components/Modal/Open'
 import Pills from './Components/Pills'
 import SiteContent from './Components/SiteContent'
 import Pagination from './Components/Pagination'
-import UIList from './Objects/UIList'
+import UIList from './Components/UIList'
 
 class App extends Component {
   constructor() {
