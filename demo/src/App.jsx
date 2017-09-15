@@ -14,6 +14,7 @@ import OpenModal from './Components/Modal/Open'
 import Pills from './Components/Pills'
 import SiteContent from './Components/SiteContent'
 import Pagination from './Components/Pagination'
+import UIList from './Components/UIList'
 
 class App extends Component {
   constructor() {
@@ -129,6 +130,8 @@ class App extends Component {
               </table>
             </div>
             <Loader />
+            <h3>UI List</h3>
+            <UIList />
           </div>
         </section>
       </div>

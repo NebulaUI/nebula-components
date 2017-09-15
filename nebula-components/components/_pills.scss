@@ -4,7 +4,7 @@
     color: $txt;
     background-color: $bg;
     transition: background-color $nb-transition-duration;
-    border-radius: $nb-spacing-unit;
+    border-radius: $nb-button-border-radius;
 
     &:focus {
       outline: none;
