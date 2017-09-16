@@ -11,7 +11,7 @@
   .#{$nb-namespace}c-flyout__content {
     position: absolute;
     z-index: 1;
-    min-width: $nb-flyout-min-width;
+    width: $nb-flyout-width;
     max-width: calc(100vw - #{$nb-spacing-unit-double});
     transform: scale(0);
   }
