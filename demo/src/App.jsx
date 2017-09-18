@@ -4,6 +4,7 @@ import Buttons from './Components/Buttons'
 import Typography from './Components/Typography'
 import FormElements from './Components/FormElements'
 import Navbar from './Components/Navbar'
+import LinkList from './Components/LinkList'
 import Cards from './Components/Cards'
 import StatusCards from './Components/Cards/StatusCards'
 import Flyouts from './Components/Flyouts'
@@ -132,6 +133,8 @@ class App extends Component {
             <Loader />
             <h3>UI List</h3>
             <UIList />
+            <h3>Link List</h3>
+            <LinkList />
           </div>
         </section>
       </div>
