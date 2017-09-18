@@ -18,8 +18,7 @@
   }
 
   > .#{$nb-namespace}c-foldable__body {
-    height: 0;
-    overflow: hidden;
+    display: none;
   }
 }
 
@@ -75,8 +74,7 @@
   }
 
   [class*='c-foldable'].is-open > .#{$nb-namespace}c-foldable__body {
-    height: auto;
-    overflow: visible;
+    display: block;
   }
 
   // reason: Requires the high-specificity selector below to allow nesting of foldable components.
