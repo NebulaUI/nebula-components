@@ -64,6 +64,10 @@
     }
   }
 
+  .#{$nb-namespace}c-tabs__list--spread-items {
+    display: flex;
+  }
+
   .#{$nb-namespace}c-tabs__list-wrapper {
     position: relative;
 
@@ -108,6 +112,10 @@
     &::after {
       opacity: 1;
     }
+  }
+
+  .#{$nb-namespace}c-tabs__list--spread-items > .#{$nb-namespace}c-tabs__tab {
+    flex: 1;
   }
 
   .#{$nb-namespace}c-tabs__panel {
