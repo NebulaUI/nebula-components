@@ -3,7 +3,7 @@ import T from 'prop-types'
 import classNames from 'classnames'
 
 const Item = ({ children, className }) => (
-  <li className={classNames('c-list__item', className)}>
+  <li className={classNames('c-link-list__item', className)}>
     { children }
   </li>
 )

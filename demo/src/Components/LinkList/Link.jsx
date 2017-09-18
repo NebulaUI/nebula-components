@@ -3,7 +3,7 @@ import T from 'prop-types'
 import classNames from 'classnames'
 
 const Link = ({ to, children, className }) => (
-  <a href={to} className={classNames('c-list__link', className)}>LinkList
+  <a href={to} className={classNames('c-link-list__link', className)}>
     { children }
   </a>
 )

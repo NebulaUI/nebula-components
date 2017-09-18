@@ -1,19 +1,28 @@
 @mixin nb-link-list-spacing {
-  $class: 'list';
+  $class: 'link-list';
   $modifier: '--spaced';
   @each $key, $value in $nb-list-spacing {
     $compound-class: '#{$nb-namespace}c-#{$class}#{$modifier}-#{$key}';
+    $computed-value: ($value / 2);
 
-    .#{$compound-class} > .#{$nb-namespace}c-#{$class}__item {
-      padding-top: $value;
-      padding-bottom: $value;
+    .#{$compound-class} .#{$nb-namespace}c-#{$class}__link {
+      padding: $computed-value;
+    }
+
+    .#{$compound-class} .#{$nb-namespace}c-#{$class}__group {
+      padding-top: $computed-value;
+      padding-bottom: $computed-value;
     }
 
     @each $bp-key, $bp-value in $nb-breakpoints {
       @include nb-respond-to($bp-key) {
-        .#{$compound-class}#{$nb-breakpoint-class}#{$bp-key} > .#{$nb-namespace}c-#{$class}__item {
-          padding-top: $value;
-          padding-bottom: $value;
+        .#{$compound-class}#{$nb-breakpoint-class}#{$bp-key} .#{$nb-namespace}c-#{$class}__link {
+          padding: $computed-value;
+        }
+
+        .#{$compound-class}#{$nb-breakpoint-class}#{$bp-key} .#{$nb-namespace}c-#{$class}__group {
+          padding-top: $computed-value;
+          padding-bottom: $computed-value;
         }
       }
     }
@@ -21,17 +30,18 @@
 }
 
 @if $nb-use-link-list {
-  .#{$nb-namespace}c-list {
+  .#{$nb-namespace}c-link-list,
+  .#{$nb-namespace}c-link-list__group {
     @include nb-bare-list;
   }
 
-  .#{$nb-namespace}c-list__item + .#{$nb-namespace}c-list__item {
-    border-top: 1px solid $nb-color-base-border;
+  .#{$nb-namespace}c-link-list__group--divider {
+    border-bottom: 1px solid $nb-color-base-border;
   }
 
-  .#{$nb-namespace}c-list__link {
+  .#{$nb-namespace}c-link-list__link {
     display: block;
-    padding: ($nb-spacing-unit-half /2);
+    text-decoration: none;
 
     &:hover,
     &:focus,
@@ -42,4 +52,12 @@
   }
 
   @include nb-link-list-spacing;
+
+  .#{$nb-namespace}c-link-list__item:first-child > .#{$nb-namespace}c-link-list__group {
+    padding-top: 0;
+  } 
+
+  .#{$nb-namespace}c-link-list__item:last-child > .#{$nb-namespace}c-link-list__group {
+    padding-bottom: 0;
+  } 
 }

@@ -3,7 +3,7 @@ import T from 'prop-types'
 import classNames from 'classnames'
 
 const List = ({ children, className }) => (
-  <ul className={classNames('c-list c-list--spaced-md', className)}>
+  <ul className={classNames('c-link-list c-link-list--spaced-md', className)}>
     { children }
   </ul>
 )
