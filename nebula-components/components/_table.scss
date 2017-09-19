@@ -1,3 +1,6 @@
+$nb-table-spacing: $nb-spacing-unit-half;
+$nb-table-spacing-half: ($nb-table-spacing / 2);
+
 @if $nb-use-table {
   .#{$nb-namespace}c-table-container {
     overflow: auto;
@@ -43,18 +46,18 @@
     text-align: left;
 
     @include nb-respond-to('max-sm') {
-      padding-left: $nb-spacing-unit-half;
-      padding-right: $nb-spacing-unit-half;
+      padding-left: $nb-table-spacing;
+      padding-right: $nb-table-spacing;
     }
   }
 
   .#{$nb-namespace}c-table__cell > a {
     display: inline-block;
     // Creating a larger hit area for improved touch-UX
-    margin-top: -$nb-spacing-unit-half;
-    margin-bottom: -$nb-spacing-unit-half;
-    padding-top: $nb-spacing-unit-half;
-    padding-bottom: $nb-spacing-unit-half;
+    margin-top: -$nb-table-spacing;
+    margin-bottom: -$nb-table-spacing;
+    padding-top: $nb-table-spacing;
+    padding-bottom: $nb-table-spacing;
   }
 
 
@@ -64,15 +67,15 @@
 
   .#{$nb-namespace}c-table__sort-button {
     width: 100%;
-    padding: $nb-spacing-unit;
+    padding: $nb-table-spacing;
     white-space: nowrap;
     text-align: left;
     background: transparent;
     color: $nb-color-base-text;
 
     @include nb-respond-to('max-sm') {
-      padding-left: $nb-spacing-unit-half;
-      padding-right: $nb-spacing-unit-half;
+      padding-left: $nb-table-spacing;
+      padding-right: $nb-table-spacing;
     }
   }
 
@@ -84,7 +87,7 @@
       display: inline-block;
       width: $size;
       height: $size;
-      margin-left: $nb-spacing-unit-half;
+      margin-left: $nb-table-spacing;
       vertical-align: middle;
       background-size: contain;
       background-repeat: no-repeat;
@@ -135,7 +138,7 @@
         }
 
         .#{$nb-namespace}c-table__header {
-          padding-left: $nb-spacing-unit-half;
+          padding-left: $nb-table-spacing;
         }
 
         .#{$nb-namespace}c-table__header-cell--sortable {
@@ -143,18 +146,18 @@
         }
 
         .#{$nb-namespace}c-table__row {
-          padding: $nb-spacing-unit-half 0;
+          padding: $nb-table-spacing 0;
         }
 
         .#{$nb-namespace}c-table__cell,
         .#{$nb-namespace}c-table__header-cell {
-          padding-top: $nb-spacing-unit-half;
-          padding-bottom: $nb-spacing-unit-half;
+          padding-top: $nb-table-spacing;
+          padding-bottom: $nb-table-spacing;
         }
 
         &:not(.#{$nb-namespace}c-table--no-labels) .#{$nb-namespace}c-table__cell {
           overflow: hidden;
-          margin-right: $nb-spacing-unit-half;
+          margin-right: $nb-table-spacing;
           padding-left: $nb-table-cell-label-width;
           padding-right: 0;
           vertical-align: top;
@@ -173,13 +176,13 @@
 
       .#{$nb-namespace}c-table--sorted.#{$nb-namespace}c-table--stack\@max-#{$key} {
         .#{$nb-namespace}c-table__header {
-          padding-top: $nb-spacing-unit-half;
+          padding-top: $nb-table-spacing;
           padding-left: 0;
         }
 
         .#{$nb-namespace}c-table__header::before {
           display: table-cell;
-          padding: $nb-spacing-unit-half;
+          padding: $nb-table-spacing;
           white-space: nowrap;
           font-weight: bold;
           content: attr(aria-label);
@@ -189,20 +192,20 @@
           display: table-cell;
           width: 100%;
           padding: 0;
-          padding-right: $nb-spacing-unit-half;
+          padding-right: $nb-table-spacing;
 
           @include nb-respond-to('max-xs') {
             display: block;
-            padding-left: $nb-spacing-unit-half;
+            padding-left: $nb-table-spacing;
           }
         }
 
         .#{$nb-namespace}c-table__header-cell {
-          padding: 0 $nb-spacing-unit-half $nb-spacing-unit-half 0;
+          padding: 0 $nb-table-spacing $nb-table-spacing 0;
         }
 
         .#{$nb-namespace}c-table__sort-button {
-          padding: $nb-spacing-unit-half ($nb-spacing-unit * 0.75);
+          padding: $nb-table-spacing (($nb-table-spacing * 2) * 0.75);
           background: $nb-color-grey-v-light;
         }
       }
