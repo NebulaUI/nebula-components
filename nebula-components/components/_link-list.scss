@@ -44,20 +44,24 @@
     text-decoration: none;
 
     &:hover,
-    &:focus,
-    &:active {
+    &:focus {
       color: $nb-color-white;
       background: $nb-color-alpha;
     }
+  }
+
+  .#{$nb-namespace}c-link-list__link.is-active {
+    color: $nb-color-white;
+    background-color: $nb-color-alpha;
   }
 
   @include nb-link-list-spacing;
 
   .#{$nb-namespace}c-link-list__item:first-child > .#{$nb-namespace}c-link-list__group {
     padding-top: 0;
-  } 
+  }
 
   .#{$nb-namespace}c-link-list__item:last-child > .#{$nb-namespace}c-link-list__group {
     padding-bottom: 0;
-  } 
+  }
 }
