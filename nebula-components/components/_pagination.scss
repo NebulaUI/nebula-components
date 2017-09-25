@@ -31,14 +31,15 @@
     &:hover,
     &:focus {
       $width: 2px;
+      border-color: $nb-active-border-color;
       background-image:
-        linear-gradient(to top, $nb-color-alpha $width, transparent $width),
-        linear-gradient(to right, $nb-color-alpha $width, transparent $width),
-        linear-gradient(to bottom, $nb-color-alpha $width, transparent $width),
-        linear-gradient(to left, $nb-color-alpha $width, transparent $width);
+        linear-gradient(to top, $nb-active-border-color $width, transparent $width),
+        linear-gradient(to right, $nb-active-border-color $width, transparent $width),
+        linear-gradient(to bottom, $nb-active-border-color $width, transparent $width),
+        linear-gradient(to left, $nb-active-border-color $width, transparent $width);
     }
   }
-  
+
   .#{$nb-namespace}c-pagination__link--previous,
   .#{$nb-namespace}c-pagination__link--next {
     width: auto;
