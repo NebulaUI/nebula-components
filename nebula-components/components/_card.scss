@@ -5,26 +5,35 @@
 }
 
 @if $nb-use-status-card {
+  $nb-status-card-padding: ($nb-spacing-unit-half / 2);
+
   .#{$nb-namespace}c-status-card {
     @include nb-card;
-    border-left-width: $nb-active-border-width;
-    border-style: solid;
+    padding: 0;
+  }
+
+  .#{$nb-namespace}c-status-card__component {
+    padding: $nb-status-card-padding;
+  }
+
+  .#{$nb-namespace}c-status-card__body {
+    padding: $nb-spacing-unit;
   }
 
   .#{$nb-namespace}c-status-card--success {
-    border-left-color: $nb-card-status-color-success;
+    background-color: $nb-color-success;
   }
 
   .#{$nb-namespace}c-status-card--info {
-    border-left-color: $nb-card-status-color-info;
+    background-color: $nb-color-info;
   }
 
   .#{$nb-namespace}c-status-card--warning {
-    border-left-color: $nb-card-status-color-warning;
+    background-color: $nb-color-warning;
   }
 
   .#{$nb-namespace}c-status-card--error {
-    border-left-color: $nb-card-status-color-error;
+    background-color: $nb-color-error;
   }
 }
 
