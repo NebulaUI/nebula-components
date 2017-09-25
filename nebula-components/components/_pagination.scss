@@ -91,10 +91,8 @@
   }
 
   .#{$nb-namespace}c-pagination__link[disabled] {
-    color: $nb-color-grey;
     background-color: transparent;
     cursor: not-allowed;
-    border: 0;
   }
 
   .#{$nb-namespace}c-pagination__link.is-active {
