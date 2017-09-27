@@ -3,6 +3,7 @@ import React from 'react'
 import Typography from './Components/Typography'
 import Tooltip from './Components/Tooltip'
 import SiteContent from './Components/SiteContent'
+import StatusCards from './Components/Cards/StatusCards'
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
         <h1>Nebula Components</h1>
       </div>
       <Typography />
+      <StatusCards />
       <div className="o-site-wrap o-site-wrap--padding">
         <Tooltip direction="north" />
         <Tooltip direction="south" />
