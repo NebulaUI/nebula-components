@@ -8,31 +8,45 @@
   $nb-status-card-padding: ($nb-spacing-unit-half / 2);
 
   .#{$nb-namespace}c-status-card {
-    @include nb-card;
-    padding: 0;
+    display: table;
+    width: 100%;
+    border: 1px solid $nb-color-base-border;
+    background-color: $nb-color-white;
   }
 
   .#{$nb-namespace}c-status-card__component {
+    display: table-cell;
     padding: $nb-status-card-padding;
+    vertical-align: middle;
+    color: $nb-color-white;
+    fill: $nb-color-white;
+  }
+
+  .#{$nb-namespace}c-status-card__component > * {
+    padding-left: ($nb-spacing-unit-half / 2 );
+    padding-right: ($nb-spacing-unit-half / 2 );
   }
 
   .#{$nb-namespace}c-status-card__body {
+    display: table-cell;
+    width: 100%;
     padding: $nb-spacing-unit;
+    vertical-align: middle;
   }
 
-  .#{$nb-namespace}c-status-card--success {
+  .#{$nb-namespace}c-status-card--success > .#{$nb-namespace}c-status-card__component {
     background-color: $nb-color-success;
   }
 
-  .#{$nb-namespace}c-status-card--info {
+  .#{$nb-namespace}c-status-card--info > .#{$nb-namespace}c-status-card__component {
     background-color: $nb-color-info;
   }
 
-  .#{$nb-namespace}c-status-card--warning {
+  .#{$nb-namespace}c-status-card--warning > .#{$nb-namespace}c-status-card__component {
     background-color: $nb-color-warning;
   }
 
-  .#{$nb-namespace}c-status-card--error {
+  .#{$nb-namespace}c-status-card--error > .#{$nb-namespace}c-status-card__component {
     background-color: $nb-color-error;
   }
 }
