@@ -5,8 +5,6 @@
 }
 
 @if $nb-use-status-card {
-  $nb-status-card-padding: ($nb-spacing-unit-half / 2);
-
   .#{$nb-namespace}c-status-card {
     display: table;
     width: 100%;
@@ -16,7 +14,8 @@
 
   .#{$nb-namespace}c-status-card__component {
     display: table-cell;
-    padding: $nb-status-card-padding;
+    padding-left: ($nb-active-border-width / 2);
+    padding-right: ($nb-active-border-width / 2);
     vertical-align: middle;
     color: $nb-color-white;
     fill: $nb-color-white;
