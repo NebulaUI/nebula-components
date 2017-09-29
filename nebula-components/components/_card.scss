@@ -26,6 +26,10 @@
     padding-right: ($nb-spacing-unit-half / 2 );
   }
 
+  .#{$nb-namespace}c-status-card__component .#{$nb-namespace}c-icon__svg {
+    max-width: initial;
+  }
+
   .#{$nb-namespace}c-status-card__body {
     display: table-cell;
     width: 100%;
