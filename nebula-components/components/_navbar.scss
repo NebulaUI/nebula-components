@@ -80,6 +80,7 @@
 
 .#{$nb-namespace}c-navbar__logo {
   display: inline-block;
+  height: 100%;
   color: inherit;
   font-weight: bold;
   text-decoration: none;
@@ -95,6 +96,7 @@
 }
 
 .#{$nb-namespace}c-navbar__logo > img {
+  max-height: 100%;
   vertical-align: middle;
 }
 
