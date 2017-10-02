@@ -102,7 +102,8 @@
 
 .c-navbar__content-wrapper {
   @include nb-respond-to('max-#{$nb-nav-bp-key}') {
-    width: $nb-navbar-collapsed-width;
+    max-width: $nb-navbar-collapsed-width;
+    width: 100vw;
     height: calc(100vh - #{$nb-navbar-height-collapsed});
     overflow-y: auto;
     margin-top: 1px;
