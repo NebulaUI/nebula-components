@@ -1,0 +1,8 @@
+.#{$nb-namespace}c-fade-in {
+  opacity: 0;
+}
+
+.#{$nb-namespace}c-fade-in--has-mounted {
+  opacity: 1;
+  transition: opacity $nb-fade-in-transition-duration;
+}

@@ -3,7 +3,6 @@ $nb-search-submit-width-sm: 3rem;
 
 .#{$nb-namespace}c-search {
   position: relative;
-  overflow: hidden;
   border-radius: $nb-border-radius;
 }
 
@@ -40,10 +39,14 @@ $nb-search-submit-width-sm: 3rem;
 
 .#{$nb-namespace}c-search--submit-left > .#{$nb-namespace}c-search__submit {
   left: 0;
+  border-top-left-radius: $nb-text-input-border-radius;
+  border-bottom-left-radius: $nb-text-input-border-radius;
 }
 
 .#{$nb-namespace}c-search--submit-right > .#{$nb-namespace}c-search__submit {
   right: 0;
+  border-top-right-radius: $nb-text-input-border-radius;
+  border-bottom-right-radius: $nb-text-input-border-radius;
 
   &::before {
     transform: rotate(90deg);
