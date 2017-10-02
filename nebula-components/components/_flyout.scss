@@ -7,6 +7,9 @@
   .#{$nb-namespace}c-flyout.is-open > .#{$nb-namespace}c-flyout__content {
     transform: scale(1);
     opacity: 1;
+  }
+
+  .#{$nb-namespace}c-flyout.is-open > .#{$nb-namespace}c-flyout__content--transition {
     transition: transform $nb-flyout-transition-duration, opacity $nb-flyout-transition-duration;
   }
 
