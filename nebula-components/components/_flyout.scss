@@ -6,6 +6,8 @@
 
   .#{$nb-namespace}c-flyout.is-open > .#{$nb-namespace}c-flyout__content {
     transform: scale(1);
+    opacity: 1;
+    transition: transform $nb-flyout-transition-duration, opacity $nb-flyout-transition-duration;
   }
 
   .#{$nb-namespace}c-flyout__content {
@@ -13,7 +15,11 @@
     z-index: 1;
     width: $nb-flyout-width;
     max-width: calc(100vw - #{$nb-spacing-unit-double});
+    opacity: 0;
     transform: scale(0);
+  }
+
+  .#{$nb-namespace}c-flyout__content--transition {
   }
 
   .#{$nb-namespace}c-flyout__toggle {
@@ -23,6 +29,7 @@
   .#{$nb-namespace}c-flyout__content--ne {
     bottom: calc(100% + #{$nb-spacing-unit-half});
     left: 0;
+    transform-origin: 0 100%;
 
     &::after {
       @include nb-triangle(down);
@@ -32,6 +39,7 @@
   .#{$nb-namespace}c-flyout__content--se {
     top: calc(100% + #{$nb-spacing-unit-half});
     left: 0;
+    transform-origin: 0 0;
 
     &::after {
       @include nb-triangle(up);
@@ -41,6 +49,7 @@
   .#{$nb-namespace}c-flyout__content--sw {
     top: calc(100% + #{$nb-spacing-unit-half});
     right: 0;
+    transform-origin: 100% 0;
 
     &::after {
       @include nb-triangle(left);
@@ -50,6 +59,7 @@
   .#{$nb-namespace}c-flyout__content--nw {
     bottom: calc(100% + #{$nb-spacing-unit-half});
     right: 0;
+    transform-origin: 100% 100%;
 
     &::after {
       @include nb-triangle(right);
