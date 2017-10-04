@@ -105,14 +105,20 @@
     width: 100%;
     height: 0;
     overflow: hidden;
+    transform: scale(1, 0);
+    transform-origin: 50% 0;
     opacity: 0;
   }
 
   .#{$nb-namespace}c-btn-dropdown.is-open > .#{$nb-namespace}c-btn-dropdown__content {
     height: auto;
     overflow: visible;
+    transform: scale(1);
     opacity: 1;
-    transition: opacity $nb-transition-duration;
+  }
+
+  .#{$nb-namespace}c-btn-dropdown.is-open > .#{$nb-namespace}c-btn-dropdown__content--transition {
+    transition: transform $nb-transition-duration, opacity $nb-transition-duration;
   }
 
   .#{$nb-namespace}c-btn-dropdown.is-open > .c-btn {
