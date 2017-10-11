@@ -70,6 +70,7 @@
   height: 100%;
   max-width: $nb-site-wrap-width;
   margin: 0 auto;
+  font-size: 0;
 
   @include nb-respond-to($nb-nav-bp-key) {
     max-width: ($nb-site-wrap-width + ($nb-spacing-unit * 2));
@@ -81,9 +82,12 @@
 .#{$nb-namespace}c-navbar__logo {
   display: inline-block;
   height: 100%;
+  vertical-align: middle;
   color: inherit;
   font-weight: bold;
   text-decoration: none;
+  @include nb-base-font-size;
+  line-height: inherit;
 
   @include nb-respond-to($nb-nav-bp-key) {
     margin-right: ($nb-navbar-item-spacing * 1.5);
@@ -101,6 +105,9 @@
 }
 
 .c-navbar__content-wrapper {
+  @include nb-base-font-size;
+  line-height: inherit;
+
   @include nb-respond-to('max-#{$nb-nav-bp-key}') {
     max-width: $nb-navbar-collapsed-width;
     width: 100vw;
@@ -340,11 +347,13 @@ $burger-height: 3px;
 
 .#{$nb-namespace}c-navbar__toggle {
   position: relative;
-  display: block;
-  float: left;
+  display: inline-block;
   width: $nb-navbar-height-collapsed;
   height: 100%;
+  vertical-align: middle;
   background-color: $nb-navbar-toggle-background;
+
+  @include nb-base-font-size;
 
   @include nb-respond-to($nb-nav-bp-key) {
     display: none;
